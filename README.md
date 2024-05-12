@@ -6,7 +6,7 @@ Digital Systems: Principles and Applications - 12th Edition - (Ronald J. Tocci, 
 #### CHAPTER 02 - Number Systems and Codes
 #### CHAPTER 03 - Describing Logic Circuits
 #### CHAPTER 04 - Combinational Logic Circuits
-#### Chapter 5 - FlipFlops and Related Devices
+#### <Chapter 5 - FlipFlops and Related Devices>
 #### CHAPTER 06 - Digital Arithmetic: Operations and Circuits
 #### CHAPTER 07 - Counters and Registers
 #### CHAPTER 08 - Integrated-Circuit Logic Families
