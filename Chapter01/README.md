@@ -34,6 +34,7 @@
 * Ex: Chuyển số (0.513)<sub>10</sub> sang hệ octal: **(0.513)<sub>10</sub> = (0.406517...)<sub>8</sub>**
   ![pic04](pic04.png)
 * Lưu ý: Nếu phần thập phân mới không bao giờ = 0, ta sẽ thu được một biểu diễn tương tự số vô tỉ trong hệ decimal. Ngừng phép nhân khi đã đạt đủ độ chính xác cần thiết sau dấu chấm. 1 số hữu tỉ trong hệ decimal có thể là 1 số vô tỉ trong hệ cơ số khác và ngược lại.
+### Biểu diễn đầy đủ
 * Sau khi chuyển đổi phần nguyên và phần thập phân, ta kết hợp lại sẽ có biểu diễn đầy đủ:
   * **(41.6875)<sub>10</sub> = (101001.1011)<sub>2</sub>**
   * **(153.513)<sub>10</sub> = (231.406517...)<sub>8</sub>**
