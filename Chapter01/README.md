@@ -49,3 +49,17 @@
 * Chuyển từ octal hoặc hexa sang binary: làm ngược lại. Chuyển từng chữ số sang binary. Padding thêm 0 phía trước cho đủ bộ số.
   * Ex: **(306.D)<sub>16</sub> = (0011 0000 0110 . 1101)<sub>2</sub>**
 * Hệ hexa rất hữu ích để lưu trữ, vì sự dễ dàng chuyển đổi sang binary và sự ngắn gọn trong biểu diễn số.
+
+## 1.5. Complements of Numbers
+* Biểu diễn số dạng phần bù: hữu ích khi cần thực hiện các phép toán với số âm, hoặc phép toán trừ, giúp đơn giản hóa thiết kế mạch số cũng như tiết kiệm chi phí khi thực thi mạch số.
+* Có 2 loại phần bù: Bù cơ số - Bù r (radix complement) và Bù cơ số giản lược - Bù (r-1) (deminished radix complement).
+* Ex: Với hệ binary: Bù 2 và Bù 1. Với hệ decimal: Bù 10 và Bù 9.
+### Bù (r-1) (Deminished Radix Complement)
+* Định nghĩa: Cho 1 số N có n chữ số trong hệ cơ số r. Bù (r-1) của N = (r<sup>n</sup> - 1) - N.
+* Với hệ decimal, N = 10. (10<sup>n</sup> - 1) sẽ là 1 số có n chữ số 9. Ex: n = 4 => 10<sup>4</sup> = 10,000 và (10<sup>4</sup> - 1 = 9,999).
+* Như vậy, để tìm Bù 9 của 1 số decimal, chỉ cần trừ 9 cho mỗi chữ số của nó.
+* Ex: Bù 9 của 546700 = 999999 - 546700 = 453299. Bù 9 của 012398 = 999999 - 012398 = 987601.
+* Tương tự, với hệ binary, N = 2. (2<sup>n</sup> - 1) sẽ là 1 số có n chữ số 1. Ex: n = 4 => 2<sup>4</sup> = 10000 và (2<sup>4</sup> - 1 = 1111).
+* Vì 1-0=1 và 1-1=0. Để tìm Bù 1 của 1 số binary, chỉ cần thay đổi mỗi chữ số 0 thành 1, 1 thành 0.
+* Ex: Bù 1 của 1011000 = 0100111. Bù 1 của 0101101 = 1010010.
+* 
