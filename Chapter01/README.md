@@ -134,8 +134,21 @@
   * (+6)<sub>10</sub> + ( -13)<sub>10</sub> = 00000110 + 11110011 = 11111001 = ( -7)<sub>10</sub>.
   * ( -6)<sub>10</sub> + ( -13)<sub>10</sub> = 11111010 + 11110011 = 11101101 = (-19)<sub>10</sub> (Bit nhớ dư ra đã bị hủy bỏ).
 * Lưu ý: Để đảm bảo có kết quả chính xác, cần cung cấp đủ bit để tính cộng, tránh hiện tượng tràn số. Vì khi biểu diễn 1 số trong máy tính, ta thường khai báo cố định số bit tối đa để lưu trữ.
-
 ### Phép trừ
 * Để thực hiện phép trừ với số âm được biểu diễn ở dạng **Bù 2**, chỉ cần đơn giản lấy số bị trừ + với **Bù 2** của số trừ (gồm cả bit dấu). Bit nhớ dư ra sẽ bị hủy bỏ.
 * Ex: Tính (-6)<sub>10</sub> - (-13)<sub>10</sub> = 11111010 - 11110011. Lấy **Bù 2** của số trừ 11110011 (-13) được 00001101 (+13). Thực hiện phép cộng 11111010 + 00001101 = 100000111. Hủy bỏ bit nhớ được kết quả 00000111 (+7).
 * Nhận xét: Phép cộng và phép trừ của các số không dấu lẫn có dấu đều được thực hiện theo cùng một cách. Vì vậy, ta chỉ cần thiết kế 1 mạch số chung để xử lý cho tất cả. Người dùng sẽ giải thích kết quả phép cộng hay phép trừ theo 1 cách phù hợp tùy vào quy ước số đó là có dấu hay không dấu. Do đó, hệ thống số **Bù 2** là nền tảng cực kỳ quan trọng trong mạch số. 
+
+## 1.7. Các loại mã hóa nhị phân
+
+### BCD Code (Binary-Coded Decimal Code): Số thập phân được mã hóa nhị phân
+* Hệ nhị phân rất ưu việt trong mạch số, nhưng hệ thập phân lại quen thuộc với con người hơn. Có 1 cách trung hòa 2 hệ số này, đó là mã hóa mỗi chữ số của hệ decimal thành binary.
+* Có thể dùng 4 bit để mã hóa tối đa 2<sup>4</sup> = 16 giá trị khác nhau, trong khi hệ thập phân chỉ số 10 chữ số riêng biệt. Như vậy sẽ có 6 chuỗi 4 bit không mã hóa cho chữ số thập phân nào.
+* Ex: (396)<sub>10</sub> được biểu diễn dưới dạng mã BCD với 12 bits: (0011 1001 0110)<sub>BCD</sub>
+* Bảng mã BCD được liệt kê trong hình dưới. Lưu ý: Các chuỗi nhị phân từ 1010 -> 1111 không được sử dụng trong mã BCD.
+  ![pic05](pic05.png)
+
+### Phép cộng trong mã BCD
+* Để thực hiện phép cộng 2 số BCD, cần chú ý rằng khi kết quả > 1001 (9<sub>10</sub>), kết quả sẽ là một chuỗi BCD vô nghĩa, ta cần + thêm 6<sub>10</sub> (0110<sub>2</sub>) vào kết quả để có được kết quả chính xác.
+* Ex: (4 + 5)<sub>10</sub> = (0100 + 0101)<sub>BCD</sub> = 1001<sub>BCD</sub> (9<sub>10</sub>).
+* 
