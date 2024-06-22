@@ -1,3 +1,3 @@
-* Digital Systems and Binary Numbers
+# Digital Systems and Binary Numbers
 
-** 1.1. Digital Systems
+## 1.1. Digital Systems
