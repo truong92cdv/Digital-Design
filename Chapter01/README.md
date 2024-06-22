@@ -130,6 +130,6 @@
   * Phép cộng 2 số nhị phân có dấu với số âm viết dưới dạng **Bù 2** được tính bằng cách cộng 2 số gồm cả bit dấu. Bit nhớ dư ra sẽ bị hủy bỏ.
 * Ví dụ:
   * (+6)<sub>10</sub> + (+13)<sub>10</sub> = 00000110 + 00001101 = 00010011 = (+19)<sub>10</sub>.
-  * (-6)<sub>10</sub> + (+13)<sub>10</sub> = 11111010 + 00001101 = 00000111 = (+7)<sub>10</sub> (Bit nhớ dư ra đã bị hủy bỏ).
+  * ( -6)<sub>10</sub> + (+13)<sub>10</sub> = 11111010 + 00001101 = 00000111 = (+7)<sub>10</sub> (Bit nhớ dư ra đã bị hủy bỏ).
   * (+6)<sub>10</sub> + (-13)<sub>10</sub> = 00000110 + 11110011 = 11111001 = (-7)<sub>10</sub>.
   * (-6)<sub>10</sub> + (-13)<sub>10</sub> = 11111010 + 11110011 = 11101101 = (-19)<sub>10</sub> (Bit nhớ dư ra đã bị hủy bỏ).
