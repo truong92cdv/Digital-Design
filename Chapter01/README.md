@@ -23,6 +23,8 @@
 * Chuyển đổi hệ thập phân -> hệ cơ số r: Chia ra 2 phần (phần nguyên và phần sau dấu chấm).
 ### Phần nguyên
 * Chia số đó cho cơ số r, được thương và phần dư. Tiếp tục lấy thương chia cho r đến khi thương = 0. Viết các số dư theo thứ tự ngược lại.
-* Ex: Chuyển số (41)<sub>10</sub> sang hệ nhị phân:
+* Ex: Chuyển số 41<sub>10</sub> sang hệ nhị phân: **(41)<sub>10</sub> = (101001)<sub>2</sub>**
   ![pic01](pic01.png)
-  * (41)<sub>10</sub> = (101001)<sub>2</sub>
+* Ex: Chuyển số 153<sub>10</sub> sang hệ octal: **(153)<sub>10</sub> = (231)<sub>8</sub>**
+  ![pic02](pic02.png)
+
