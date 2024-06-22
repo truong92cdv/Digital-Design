@@ -23,6 +23,7 @@
 * Chuyển đổi hệ decimal -> hệ cơ số r: Chia ra 2 phần (phần nguyên và phần thập phân).
   
 ### Phần nguyên
+***
 * Chia số đó cho cơ số r, được thương và phần dư. Tiếp tục lấy thương chia cho r đến khi thương = 0. Viết các số dư theo thứ tự ngược lại.
 * Ex: Chuyển số (41)<sub>10</sub> sang hệ binary: **(41)<sub>10</sub> = (101001)<sub>2</sub>**
   ![pic01](pic01.png)
@@ -30,6 +31,7 @@
   ![pic02](pic02.png)
   
 ### Phần thập phân
+***
 * Lấy phần thập phân nhân với cơ số r, được phần nguyên và phần thập phân mới. Tiếp tục lấy phần thập phân mới nhân với r đến khi phần thập phân mới = 0. Viết các phần nguyên theo thứ tự sẽ được biểu diễn tương đương trong hệ cơ số r.
 * Ex: Chuyển số (0.6875)<sub>10</sub> sang hệ binary: **(0.6875)<sub>10</sub> = (0.a<sub>-1</sub>a<sub>-2</sub>a<sub>-3</sub>a<sub>4</sub>)<sub>2</sub> = (0.1011)<sub>2</sub>**
   ![pic03](pic03.png)
@@ -38,6 +40,7 @@
 * Lưu ý: Nếu phần thập phân mới không bao giờ = 0, ta sẽ thu được một biểu diễn tương tự số vô tỉ trong hệ decimal. Ngừng phép nhân khi đã đạt đủ độ chính xác cần thiết sau dấu chấm. 1 số hữu tỉ trong hệ decimal có thể là 1 số vô tỉ trong hệ cơ số khác và ngược lại.
   
 ### Biểu diễn đầy đủ
+***
 * Sau khi chuyển đổi phần nguyên và phần thập phân, ta kết hợp lại sẽ có biểu diễn đầy đủ:
   * **(41.6875)<sub>10</sub> = (101001.1011)<sub>2</sub>**
   * **(153.513)<sub>10</sub> = (231.406517...)<sub>8</sub>**
@@ -59,6 +62,7 @@
 * Ex: Với hệ binary: **Bù 2** và **Bù 1**. Với hệ decimal: **Bù 10** và **Bù 9**.
   
 ### Bù (r-1) (Deminished Radix Complement)
+***
 * Định nghĩa: Cho 1 số N có n chữ số trong hệ cơ số r.
   * **Bù (r-1) của N = (r<sup>n</sup> - 1) - N**.
     
@@ -73,6 +77,7 @@
   * Ex: Bù 1 của 1011000 = 0100111.
     
 ### Bù r (Radix Complement)
+
 * Định nghĩa: Cho 1 số N có n chữ số trong hệ cơ số r.
   * **Bù r của N = r<sup>n</sup> - N nếu N # 0 và bằng 0 với N = 0**.
 * So sánh với dạng **Bù (r-1)**, ta thấy rằng **Bù r = Bù (r-1) + 1** => Muốn tìm **Bù r**, ta tìm **Bù (r-1)** rồi + thêm 1 vào kết quả.
@@ -204,11 +209,11 @@
 # 1.9. Logic nhị phân
 
 * Có 3 phép toán logic nhị phân cơ bản:
-  * AND - ký hiệu bởi dấu ".": **z = x . y nghĩa là z = x AND y**.
+  * **AND** - ký hiệu bởi dấu ".": **z = x . y nghĩa là z = x AND y**.
     * z = 1 khi x = 1 và y = 1; z = 0 trong các trường hợp còn lại.
-  * OR - ký hiệu bởi dấu "+": **z = x + y nghĩa là z = x OR y**.
+  * **OR** - ký hiệu bởi dấu "+": **z = x + y nghĩa là z = x OR y**.
     * z = 0 khi x = 0 và y = 0; z = 1 trong các trường hợp còn lại.
-  * NOT - ký hiệu bởi dấu ' hoặc dấu gạch ngang trên đầu: **z = x'**.
+  * **NOT** - ký hiệu bởi dấu ' hoặc dấu gạch ngang trên đầu: **z = x'**.
     * z = 1 khi x = 0; z = 0 khi x = 1.
 * Kết quả của 1 phép toán logic nhị phân có thể biểu diễn dưới dạng bảng chân trị (truth table).
 ![pic09](pic09.png)
