@@ -89,3 +89,21 @@ Có 6 định lý cơ bản, các định lý có thể chứng minh từ các t
   * Kết hợp các số hạng lại, thành phần nào trùng lắp thì bỏ đi vì ta có định lý $x * x = x$. Thu được:
     * $F = (x + y + z)(x + y' + z)(x' + y + z)(x' + y + z') = M_0M_2M_4M_5$.
     * Hay $F = \prod(0, 2, 4, 5)$.
+
+## Chuyển đổi giữa 2 dạng chính tắc
+* Giả sử $F(A, B, C) = \sum(1, 4, 5, 6, 7)$.
+* Lấy phần bù ta được $F'(A, B, C) = \sum(0, 2, 3) = m_0 + m_2 + m_3$.
+* Tiếp tục lấy phần bù lần 2, áp dụng định lý DeMorgan ta được:
+  * $F = (m_0 + m_2 + m_3)' = m'_0 * m'_2 * m'_3 = M_0M_2M_3 = \prod(0, 2, 3)$.
+* Như vậy, để chuyển đổi giữa 2 dạng chính tắc, ta đổi $\sum$ thành $\prod$ và liệt kê các term còn thiếu trong list.
+* Ex: $F = xy + x'z = \sum(1, 3, 6, 7) = \prod(0, 2, 4, 5)$.
+
+## Dạng chuẩn
+* Dạng chính tắc là dạng cơ bản rút ra được từ bảng chân trị. Tuy nhiên, nó thường không phải là dạng ngắn gọn nhất vì mỗi số hạng đều phải chứa tất cả các biến.
+* 1 hàm Boolean có thể biểu diễn ở dạng chuẩn, trong đó mỗi toán hạng có thể chứa 1, 2, ... biến.
+* Có 2 dạng chuẩn:
+  * **sum of products**: Ex: $F1 = x' + xy + x'yz'$.
+  * **product of sums**: Ex: $F2 = x(y' + z)(x' + y + z')$.
+* Các hàm dạng chuẩn khi chuyển sang sơ đồ cổng logic sẽ ở dạng thực thi 2 mức.
+* Ví dụ về hàm không chuẩn: $F3 = AB + C(D + E)$. Khi thực thi mạch số này sẽ là thực thi 3 mức.
+* Hàm chuẩn được ưa thích hơn vì khi thực thi 2 mức sẽ giảm thiểu thời gian delay cổng.
