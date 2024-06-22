@@ -1,5 +1,4 @@
-1. Digital Systems and Binary Numbers
-***
+Digital Systems and Binary Numbers
 # 1.1. Hệ thống số
 * Hệ thống số làm việc với các đại lượng rời rạc.
 * Các hệ thống số thường gặp: Hệ nhị phân (Binary - 2), hệ bát phân (Octal - 8), hệ thập lục phân (Hex - 16), hệ thập phân (Decimal - 10).
