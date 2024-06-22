@@ -62,5 +62,9 @@ Có 6 định lý cơ bản, các định lý có thể chứng minh từ các t
 * Với n biến có thể hình thành 2<sup>n</sup> **minterm**, ký hiệu từ **m<sub>0</sub>** đến **m<sub>n-1</sub>**.
 * Tương tự, xét phép toán OR với n biến sẽ hình thành 2<sup>n</sup> tổ hợp phép toán, gọi là **maxterm**, ký hiệu từ **M<sub>0</sub>** đến **M<sub>n-1</sub>**.
 ![pic202](pic202.png)
+* 1 hàm Boolean có thể biểu diễn dưới dạng **sum of minterms** hoặc dạng **product of maxterms**, đây là dạng *chính tắc*. Ex:
+![pic203](pic203.png)
+  * *f1 = x'y'z + xy'z' + xyz = m<sub>1</sub> + m<sub>4</sub> + m<sub>7</sub>*.
+  * *f1' = x'y'z' + x'yz' + x'yz + xy'z + xyz' = m<sub>0</sub> + m<sub>2</sub> + m<sub>3</sub> + m<sub>5</sub> + m<sub>6</sub>*.
+  * *f1 = (f1')' = (x+y+z)(x+y'+z)(x+y'+z')(x'+y+z')(x'+y'+z) = M<sub>0</sub> * M<sub>2</sub> * M<sub>3</sub> * M<sub>5</sub> * M<sub>6</sub>*.
 
-* 
