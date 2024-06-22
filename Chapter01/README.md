@@ -25,3 +25,4 @@
 * Chia số đó cho cơ số r, được thương và phần dư. Tiếp tục lấy thương chia cho r đến khi thương = 0. Viết các số dư theo thứ tự ngược lại.
 * Ex: Chuyển số (41)<sub>10</sub> sang hệ nhị phân:
   ![pic01](pic01.png)
+  * (41)<sub>10</sub> = (101001)<sub>2</sub>
