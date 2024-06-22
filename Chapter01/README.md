@@ -100,7 +100,7 @@
 * Ex: Tính 3250 - 72532 theo phương pháp **Bù 10**:
   * **Bù 10** của 72532 là 27468. Lấy 03250 + 27468 được tổng 30718. Tổng này không sinh ra số nhớ, nên kết quả là 1 số âm. Để thu được kết quả, lấy **Bù 10** của tổng 30718 = 69282. Vậy kết quả cuối cùng là -69282.
     
-* Lưu ý: Ta nhận ra kết quả là 1 số âm khi tính tổng không sinh ra số nhớ.
+* Lưu ý: Ta nhận ra kết quả là 1 số âm khi tính tổng không sinh ra số nhớ. 
   
 * Ex: Tính (X - Y) với X = 1010100 và Y = 1000011 theo phương pháp **Bù 2**:
   * **Bù 2** của Y là 0111101. Lấy X + **Bù 2** của Y ta được 10010001. Hủy bỏ đi số nhớ (chữ số 1 dư ra ở bên trái) được kết quả 0010001.
