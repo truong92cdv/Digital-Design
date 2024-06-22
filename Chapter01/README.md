@@ -130,6 +130,12 @@
   * Phép cộng 2 số nhị phân có dấu với số âm viết dưới dạng **Bù 2** được tính bằng cách cộng 2 số gồm cả bit dấu. Bit nhớ dư ra sẽ bị hủy bỏ.
 * Ví dụ:
   * (+6)<sub>10</sub> + (+13)<sub>10</sub> = 00000110 + 00001101 = 00010011 = (+19)<sub>10</sub>.
-  * ( -6)<sub>10</sub> + (+13)<sub>10</sub> = 11111010 + 00001101 = 00000111 = (+7)<sub>10</sub> (Bit nhớ dư ra đã bị hủy bỏ).
+  * ( -6)<sub>10</sub> + (+13)<sub>10</sub> = 11111010 + 00001101 = 00000111 = ( +7)<sub>10</sub> (Bit nhớ dư ra đã bị hủy bỏ).
   * (+6)<sub>10</sub> + ( -13)<sub>10</sub> = 00000110 + 11110011 = 11111001 = ( -7)<sub>10</sub>.
   * ( -6)<sub>10</sub> + ( -13)<sub>10</sub> = 11111010 + 11110011 = 11101101 = (-19)<sub>10</sub> (Bit nhớ dư ra đã bị hủy bỏ).
+* Lưu ý: Để đảm bảo có kết quả chính xác, cần cung cấp đủ bit để tính cộng, tránh hiện tượng tràn số. Vì khi biểu diễn 1 số trong máy tính, ta thường khai báo cố định số bit tối đa để lưu trữ.
+
+### Phép trừ
+* Để thực hiện phép trừ với số âm được biểu diễn ở dạng **Bù 2**, chỉ cần đơn giản lấy số bị trừ + với **Bù 2** của số trừ (gồm cả bit dấu). Bit nhớ dư ra sẽ bị hủy bỏ.
+* Ex: Tính (-6)<sub>10</sub> - (-13)<sub>10</sub> = 11111010 - 11110011. Lấy **Bù 2** của số trừ 11110011 (-13) được 00001101 (+13). Thực hiện phép cộng 11111010 + 00001101 = 100000111. Hủy bỏ bit nhớ được kết quả 00000111 (+7).
+* Nhận xét: Phép cộng và phép trừ của các số không dấu lẫn có dấu đều được thực hiện theo cùng một cách. Vì vậy, ta chỉ cần thiết kế 1 mạch số chung để xử lý cho tất cả. Người dùng sẽ giải thích kết quả phép cộng hay phép trừ theo 1 cách phù hợp tùy vào quy ước số đó là có dấu hay không dấu. Do đó, hệ thống số **Bù 2** là nền tảng cực kỳ quan trọng trong mạch số. 
