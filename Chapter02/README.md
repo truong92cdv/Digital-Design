@@ -102,14 +102,14 @@ Có 6 định lý cơ bản, các định lý có thể chứng minh từ các t
 * Dạng chính tắc là dạng cơ bản rút ra được từ bảng chân trị. Tuy nhiên, nó thường không phải là dạng ngắn gọn nhất vì mỗi số hạng đều phải chứa tất cả các biến.
 * 1 hàm Boolean có thể biểu diễn ở dạng chuẩn, trong đó mỗi toán hạng có thể chứa 1, 2, ... biến.
 * Có 2 dạng chuẩn:
-  * **sum of products**: Ex: $F1 = x' + xy + x'yz'$.
-  * **product of sums**: Ex: $F2 = x(y' + z)(x' + y + z')$.
+  * **sum of products**: Ex: $F_1 = x' + xy + x'yz'$.
+  * **product of sums**: Ex: $F_2 = x(y' + z)(x' + y + z')$.
 * Các hàm dạng chuẩn khi chuyển sang sơ đồ cổng logic sẽ ở dạng thực thi 2 mức.
-* Ví dụ về hàm không chuẩn: $F3 = AB + C(D + E)$. Khi thực thi mạch số này sẽ là thực thi 3 mức.
+* Ví dụ về hàm không chuẩn: $F_3 = AB + C(D + E)$. Khi thực thi mạch số này sẽ là thực thi 3 mức.
 * Hàm chuẩn được ưa thích hơn vì khi thực thi 2 mức sẽ giảm thiểu thời gian delay cổng.
 
 # 2.7. Các phép toán logic khác
-* Ta biết rằng, với n biến, sẽ có $2^{2n}$ hàm khác nhau. Với n = 2, sẽ có tổng cộng 16 hàm Boolean. AND và OR chỉ là 2 trong số 16 hàm này. Giờ ta sẽ tìm 14 hàm còn lại. Bảng chân trị cho 16 hàm này (ký hiệu $F0 -> F15$) được cho trong hình sau:
+* Ta biết rằng, với n biến, sẽ có $2^{2n}$ hàm khác nhau. Với n = 2, sẽ có tổng cộng 16 hàm Boolean. AND và OR chỉ là 2 trong số 16 hàm này. Giờ ta sẽ tìm 14 hàm còn lại. Bảng chân trị cho 16 hàm này (ký hiệu $F_0 -> F_15$) được cho trong hình sau:
 ![pic204](pic204.png)
 * 16 hàm này có thể biểu diễn bằng các hàm Boolean như trong hình sau. Mặc dù, mỗi hàm này đều có thể biểu diễn dưới dạng các phép toán AND, OR, NOT. Tuy nhiên, ta hoàn toàn có thể gán các ký hiệu khác cho các phép toán này. Nhưng trong số các phép toán mới này, chỉ có phép toán XOR là thường được dùng trong mạch số.
 ![pic205](pic205.png)
@@ -130,18 +130,18 @@ Có 6 định lý cơ bản, các định lý có thể chứng minh từ các t
 * Ví dụ về các cổng nhiều input:
 ![pic207](pic207.png)
 
-## Positive Logic và Negative Logic
-* Tín hiệu nhị phân (input hoặc output) của các cổng sẽ có 2 giá trị HIGH hoặc LOW. Ta hoàn toàn có thể lựa chọn giá trị HIGH để biểu diễn logic 1 hay logic 0 tùy ý. Nếu chọn HIGH biểu diễn logic 1, ta sẽ có hệ thống *Positive logic*, nếu chọn LOW biểu diễn logic 1, ta sẽ có *Negative Logic*. Ở đây ta chỉ quan tâm đến *Positive Logic*.
+## Positive logic và Negative logic
+Tín hiệu nhị phân (input hoặc output) của các cổng sẽ có 2 giá trị HIGH hoặc LOW. Ta hoàn toàn có thể lựa chọn giá trị HIGH để biểu diễn logic 1 hay logic 0 tùy ý. Nếu chọn HIGH biểu diễn logic 1, ta sẽ có hệ thống *Positive logic*, nếu chọn LOW biểu diễn logic 1, ta sẽ có *Negative logic*. Ở đây ta chỉ quan tâm đến *Positive logic*.
 
 # 2.9. Mạch tích hợp IC
-* Các IC được phân loại theo độ phức tạp của mạch số, đo bởi số lượng cổng logic (hoặc transitor) trong mạch. IC được chia thành:
+Các IC được phân loại theo độ phức tạp của mạch số, đo bởi số lượng cổng logic (hoặc transitor) trong mạch. IC được chia thành:
   * SSI (Small-scale integration): < 10 cổng.
   * MSI (Medium-scale integration): 10 - 1000 cổng. Ex: decoder, adder, multiplexer, register, counter.
   * LSI (Large-scale integration): > 1000 cổng. Ex: processor, memory chip.
   * VLSI (Very large-scale integration) và ULSI (Ultra large-scale integration): chứa hàng triệu cổng logic.
 
 ## Các họ logic số
-* Các IC không chỉ được phân loại bởi độ phức tạp, mà còn phân loại dựa trên công nghệ chế tạo các cổng logic. Một số họ thường gặp:
+Các IC không chỉ được phân loại bởi độ phức tạp, mà còn phân loại dựa trên công nghệ chế tạo các cổng logic. Một số họ thường gặp:
   * TTL: transitor-transitor logic.
   * ECL: emitter-coupled logic.
   * MOS: metal-oxide semiconductor.
