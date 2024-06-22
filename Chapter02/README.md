@@ -53,8 +53,14 @@ Có 6 định lý cơ bản, các định lý có thể chứng minh từ các t
 
 ## Phần bù của 1 hàm Boolean
 * Phần bù của hàm F là hàm F' có được bằng cách thay các giá trị 0 thành 1, 1 thành 0 trong bảng chân trị. Hoặc áp dụng định lý DeMorgan bằng cách: thay các phép toán AND thành OR và ngược lại, đồng thời lấy phần bù các toán hạng. Ex:
-  * Với *F1 = x'yz' + x'y'z* thì *F1' = (x'yz' + x'y'z)' = (x + y' + z)(x + y + z')*.
+  * Với *F1 = x'yz' + x'y'z* thì *F1' = (x'yz' + x'y'z)' = (x'yz')'(x'y'z)' = (x + y' + z)(x + y + z')*.
   * Với *F2 = x(y'z' + yz)* thì *F2' = [x(y'z' + yz)]' = x' + (y'z' + yz)' = x' + (y'z')'(yz)' = x' + (y + z)(y' + z') = x' + yz' + y'z*.
 
 # 2.6. Dạng chính tắc và dạng chuẩn
+## Minterm và Maxterm
+* Xét 2 biến x, y và phép toán AND sẽ tạo ra 4 tổ hợp phép toán: x'y', x'y, xy', xy. Mỗi biểu diễn này được gọi là 1 **minterm** (tích chuẩn).
+* Với n biến có thể hình thành 2<sup>n</sup> **minterm**, ký hiệu từ **m<sub>0</sub>** đến **m<sub>n-1</sub>**.
+* Tương tự, xét phép toán OR với n biến sẽ hình thành 2<sup>n</sup> tổ hợp phép toán, gọi là **maxterm**, ký hiệu từ **M<sub>0</sub>** đến **M<sub>n-1</sub>**.
+![pic202](pic202.png)
 
+* 
