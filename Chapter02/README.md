@@ -41,4 +41,4 @@
 
 ## Các định lý cơ bản
 * Có 6 định lý cơ bản, các định lý có thể chứng minh từ các tiên đề.
-[pic201](pic201.png)
+![pic201](pic201.png)
