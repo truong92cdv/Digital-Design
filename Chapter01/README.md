@@ -1,10 +1,10 @@
 # Digital Systems and Binary Numbers
 
-## 1.1. Digital Systems
+## 1.1. Hệ thống số
 * Hệ thống số làm việc với các đại lượng rời rạc.
 * Các hệ thống số thường gặp: Hệ nhị phân (Binary - 2), hệ bát phân (Octal - 8), hệ thập lục phân (Hex - 16), hệ thập phân (Decimal - 10).
 
-## 1.2. Binary Numbers
+## 1.2. Hệ nhị phân
 * Hệ thống số nhị phân được sử dụng trong máy tính và mạch số bởi sự thuận tiện của nó.
 * Hệ nhị phân gồm 2 chữ số 0 (logic LOW) và 1 (logic HIGH).
 * Một số được biểu diễn ở hệ cơ số (base - radix) r dưới dạng:
@@ -18,20 +18,20 @@
   * Hệ Hex rất thuận tiện để lưu trữ chuỗi số nhị phân. 1 chữ số hệ hex tương đương 4 chữ số hệ binary, 2 chữ số hệ hex tương đương 8 chữ số hệ binary = 1 byte.
 * 2<sup>10</sup> = 1K (kilo). 2<sup>20</sup> = 1M (mega). 2<sup>30</sup> = 1G (giga). 2<sup>40</sup> = 1T (tetra). 
 
-## 1.3. Number-Base Conversions
-* Chuyển đổi hệ cơ số khác sang hệ thập phân: Triển khai biểu diễn như phần 1.2 bên trên.
-* Chuyển đổi hệ thập phân -> hệ cơ số r: Chia ra 2 phần (phần nguyên và phần sau dấu chấm).
+## 1.3. Chuyển đổi giữa các hệ cơ số
+* Chuyển đổi hệ cơ số r sang decimal: Triển khai biểu diễn như phần 1.2 bên trên.
+* Chuyển đổi hệ decimal -> hệ cơ số r: Chia ra 2 phần (phần nguyên và phần thập phân).
   
 ### Phần nguyên
 * Chia số đó cho cơ số r, được thương và phần dư. Tiếp tục lấy thương chia cho r đến khi thương = 0. Viết các số dư theo thứ tự ngược lại.
-* Ex: Chuyển số (41)<sub>10</sub> sang hệ nhị phân: **(41)<sub>10</sub> = (101001)<sub>2</sub>**
+* Ex: Chuyển số (41)<sub>10</sub> sang hệ binary: **(41)<sub>10</sub> = (101001)<sub>2</sub>**
   ![pic01](pic01.png)
 * Ex: Chuyển số (153)<sub>10</sub> sang hệ octal: **(153)<sub>10</sub> = (231)<sub>8</sub>**
   ![pic02](pic02.png)
   
 ### Phần thập phân
 * Lấy phần thập phân nhân với cơ số r, được phần nguyên và phần thập phân mới. Tiếp tục lấy phần thập phân mới nhân với r đến khi phần thập phân mới = 0. Viết các phần nguyên theo thứ tự sẽ được biểu diễn tương đương trong hệ cơ số r.
-* Ex: Chuyển số (0.6875)<sub>10</sub> sang hệ nhị phân: **(0.6875)<sub>10</sub> = (0.a<sub>-1</sub>a<sub>-2</sub>a<sub>-3</sub>a<sub>4</sub>)<sub>2</sub> = (0.1011)<sub>2</sub>**
+* Ex: Chuyển số (0.6875)<sub>10</sub> sang hệ binary: **(0.6875)<sub>10</sub> = (0.a<sub>-1</sub>a<sub>-2</sub>a<sub>-3</sub>a<sub>4</sub>)<sub>2</sub> = (0.1011)<sub>2</sub>**
   ![pic03](pic03.png)
 * Ex: Chuyển số (0.513)<sub>10</sub> sang hệ octal: **(0.513)<sub>10</sub> = (0.406517...)<sub>8</sub>**
   ![pic04](pic04.png)
@@ -42,7 +42,7 @@
   * **(41.6875)<sub>10</sub> = (101001.1011)<sub>2</sub>**
   * **(153.513)<sub>10</sub> = (231.406517...)<sub>8</sub>**
 
-## 1.4. Octal and Hexadecimal Numbers
+## 1.4. Hệ cơ số 8 và 16
 * Sự chuyển đổi giữa các hệ số binary, octal và hexa rất thường gặp.
 * 1 chữ số hệ octal = 3 chữ số hệ binary. 1 chữ số hệ hexa = 4 chữ số hệ binary.
 * Chuyển từ binary -> octal: nhóm từng bộ 3 chữ số binary lại, rồi chuyển từng bộ số.
@@ -53,7 +53,7 @@
   * Ex: **(306.D)<sub>16</sub> = (0011 0000 0110 . 1101)<sub>2</sub>**
 * Hệ hexa rất hữu ích để lưu trữ, vì sự dễ dàng chuyển đổi sang binary và sự ngắn gọn trong biểu diễn số.
 
-## 1.5. Complements of Numbers
+## 1.5. Biểu diễn phần bù của 1 số
 * Biểu diễn số dạng phần bù: hữu ích khi cần thực hiện các phép toán với số âm, hoặc phép toán trừ, giúp đơn giản hóa thiết kế mạch số cũng như tiết kiệm chi phí khi thực thi mạch số.
 * Có 2 loại phần bù: **Bù cơ số** - **Bù r** (radix complement) và **Bù cơ số giản lược** - **Bù (r-1)** (deminished radix complement).
 * Ex: Với hệ binary: **Bù 2** và **Bù 1**. Với hệ decimal: **Bù 10** và **Bù 9**.
@@ -111,3 +111,5 @@
   * **Bù 1** của Y là 0111100. Lấy X + **Bù 1** của Y ta được 10010000. Hủy bỏ đi số nhớ và cộng thêm 1 vào được kết quả 0010001.
 * Ex: Tính (Y - X) với X = 1010100 và Y = 1000011 theo phương pháp **Bù 1**:
   * **Bù 1** của X là 0101011. Lấy Y + **Bù 1** của X ta được 1101110. Tổng này không có số nhớ nên đáp án là số âm. Vậy ta lấy **Bù 1** của tổng 1101110 được 0010001. Kết quả cuối cùng là -0010001.
+
+## 1.6. Số nhị phân không dấu
