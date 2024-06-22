@@ -12,7 +12,7 @@
   * **Luật giao hoán**: *x * y = y * x* với mọi x, y, z thuộc S.
   * **Luật phần tử đơn vị**: Tồn tại phần tử đơn vị *e* sao cho: *e * x = x * e* với mọi x thuộc S.
   * **Phép đảo**: Nếu e là phần tử đơn vị của S với phép toán "*". Với mọi x thuộc S, tồn tại phần tử y thuộc S sao cho: *x * y = e*.
-  * **Luật phân phối**: Nếu "*" và "+" là 2 phép toán nhị phân trong S, "*" được gọi là có tính phân phối đối với "+" nếu: *x * (y + z) = x * y + x * z*.
+  * **Luật phân phối**: Nếu " * " và "+" là 2 phép toán nhị phân trong S, "*" được gọi là có tính phân phối đối với "+" nếu: *x * (y + z) = x * y + x * z*.
 
 # 2.3. Đại số Boolean
 * **Đại số Boolean** là 1 cấu trúc đại số, gồm 1 tập B cùng 2 phép toán "+" và "*" thỏa mãn các tiên đề Huntington:
