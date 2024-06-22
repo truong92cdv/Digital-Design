@@ -88,3 +88,16 @@
   * Lấy M + **Bù r** của N. Về mặt toán học: **M + (r<sup>n</sup> - N) = M - N + r<sup>n</sup>**.
   * Nếu M >= N. Phép cộng trên sẽ sinh ra phần dư r<sup>n</sup>. Loại bỏ phần dư này, ta được M - N.
   * Nếu M < N. Phép cộng trên sẽ không tạo ra phần dư, kết quả sẽ = r<sup>n</sup> - (N - M), chính là **Bù r** của hiệu (N - M). Để thu được kết quả cuối cùng, lấy **Bù r** của tổng trên và đặt dấu "-" phía trước kết quả.
+* Ex: Tính 72532 - 3250 theo phương pháp **Bù 10**:
+  * **Bù 10** của 03250 là 96750. Lấy 72532 + 96750 được tổng 169282. Hủy bỏ phần dư 10<sup>5</sup>: 169282 - 100000 được kết quả 69282.
+  * Chú ý: Phép cộng cho ra kết quả có dư 1 chữ số nhớ, có thể suy ra M >= N và đáp án là một số dương.
+* Ex: Tính 3250 - 72532 theo phương pháp **Bù 10**:
+  * **Bù 10** của 72532 là 27468. Lấy 03250 + 27468 được tổng 30718. Tổng này không sinh ra số nhớ, nên kết quả là 1 số âm. Để thu được kết quả, lấy **Bù 10** của tổng 30718 = 69282. Vậy kết quả cuối cùng là -69282.
+* Lưu ý: Ta nhận ra kết quả là 1 số âm khi tính tổng không sinh ra số nhớ.
+* Ex: Tính (X - Y) với X = 1010100 và Y = 1000011 theo phương pháp **Bù 2**:
+  * **Bù 2** của Y là 0111101. Lấy X + **Bù 2** của Y ta được 10010001. Hủy bỏ đi số nhớ (chữ số 1 dư ra ở bên trái) được kết quả 0010001.
+* Có thể dùng phương pháp **Bù (r-1)** để tính M - N theo cách tương tự: Lấy M + **Bù (r-1)** của N. Cộng tổng này với 1 sẽ được kết quả.
+* Ex: Tính (X - Y) với X = 1010100 và Y = 1000011 theo phương pháp **Bù 1**:
+  * **Bù 1** của Y là 0111100. Lấy X + **Bù 1** của Y ta được 10010000. Hủy bỏ đi số nhớ và cộng thêm 1 vào được kết quả 0010001.
+* Ex: Tính (Y - X) với X = 1010100 và Y = 1000011 theo phương pháp **Bù 1**:
+  * **Bù 1** của X là 0101011. Lấy Y + **Bù 1** của X ta được 1101110. Tổng này không có số nhớ nên đáp án là số âm. Vậy ta lấy **Bù 1** của tổng 1101110 được 0010001. Kết quả cuối cùng là -0010001.
