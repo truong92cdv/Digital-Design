@@ -155,7 +155,7 @@
   * (8 + 9)<sub>10</sub> = (1000 + 1001)<sub>BCD</sub> = 10001. Vì 10001 > 1001 nên cần + thêm 0110 vào được 10111<sub>BCD</sub> hay 17<sub>10</sub>.
 * Để cộng 2 số BCD có nhiều chữ số, ta cộng từng chữ số từ phải qua trái theo phương pháp trên.
   * Ex: Tính (184 + 576) trong mã BCD:
-  * ![pic06](pic06.png)
+  ![pic06](pic06.png)
 
 ### Số có dấu trong BCD
 * Để biểu diễn số có dấu trong BCD, ta dùng 1001 hay 9<sub>10</sub> đặt phía trước số để biểu diễn số âm. Thực hiện các phép toán tương tự ở trên.
