@@ -202,3 +202,17 @@
 * Chuỗi bits trong 1 thanh ghi có thể được chuyển sang các thanh ghi khác thông qua các mạch logic số. Thanh ghi là đơn vị lưu trữ thông tin cơ bản trong máy tính
 
 # 1.9. Logic nhị phân
+
+* Có 3 phép toán logic nhị phân cơ bản:
+  * AND: ký hiệu bởi dấu "." - **z = x . y nghĩa là z = x AND y**.
+    * z = 1 khi x = 1 và y = 1. z = 0 trong các trường hợp còn lại.
+  * OR: ký hiệu bởi dấu "+" - **z = x + y nghĩa là z = x OR y**.
+    * z = 0 khi x = 0 và y = 0. z = 1 trong các trường hợp còn lại.
+  * NOT: ký hiệu bởi dấu ' hoặc dấu gạch ngang trên đầu - **z = x'**.
+    * z = 1 khi x = 0 và z = 0 khi x = 1.
+* Kết quả của 1 phép toán logic nhị phân có thể biểu diễn dưới dạng bảng chân trị (truth table).
+![pic09](pic09.png)
+
+## Cổng logic
+* Các cổng logic được ký hiệu như sau:
+![pic10](pic10.png)
