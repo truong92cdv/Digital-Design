@@ -114,10 +114,22 @@
 
 ## 1.6. Số nhị phân có dấu
 * Có 3 cách biểu diễn số âm trong máy tính:
-  * Phương pháp "dấu - độ lớn": Thêm 1 bit dấu phía trước số. Bit 0 cho số dương, Bit 1 cho số âm.
+  * Phương pháp "dấu - độ lớn": Thêm 1 bit dấu phía trước số đó. Bit 0 cho số dương, Bit 1 cho số âm.
   * Phương pháp "Bù 1".
   * Phương pháp "Bù 2".
-* Ex: Biểu diễn -9 trong hệ binary với 8 bits theo 3 cách. Lưu ý rằng +9 trong 3 cách đều là 00001001:
+* Ex: Biểu diễn -9 trong hệ binary với 8 bits theo 3 cách. Lưu ý rằng +9 trong 3 cách đều là 00001001.
   * Phương pháp "dấu - độ lớn": 10001001.
   * Phương pháp "Bù 1":         11110110.
   * Phương pháp "Bù 2":         11110111.
+* Phương pháp "dấu - độ lớn" thường được dùng trong toán học thông thường, nhưng không hữu ích trong mạch số, vì khi tính toán phải xử lý phần dấu và phần độ lớn riêng.
+* Phương pháp "Bù 2" được dùng phổ biến nhất để biểu diễn số âm. Vì nó rất phù hợp khi thực thi mạch số.
+
+### Phép cộng
+* Với phương pháp "dấu - độ lớn", phép cộng được thực hiện như phép tính cộng thông thường. Nếu 2 số cùng dấu, cộng 2 độ lớn và đặt dấu chung phía trước. Nếu 2 số khác dấu, trừ số lớn cho số nhỏ (theo độ lớn) rồi lấy dấu theo số có độ lớn lớn hơn. Ex: (+25) + (-37) = -(37 - 25) = -12. Phương pháp này yêu cầu phải so sánh dấu, so sánh độ lớn, sau đó thực hiện phép cộng hoặc phép trừ tương ứng.
+* Với phương pháp "Bù 1" hoặc "Bù 2", không cần thực hiện phép so sánh hay phép trừ, chỉ cần 1 loại phép cộng. Giải thuật rất đơn giản như sau:
+  * Phép cộng 2 số nhị phân có dấu với số âm viết dưới dạng **Bù 2** được tính bằng cách cộng 2 số gồm cả bit dấu. Bit nhớ dư ra sẽ bị hủy bỏ.
+* Ví dụ:
+  * (+6)<sub>10</sub> + (+13)<sub>10</sub> = 00000110 + 00001101 = 00010011 = (+19)<sub>10</sub>.
+  * (-6)<sub>10</sub> + (+13)<sub>10</sub> = 11111010 + 00001101 = 00000111 = (+7)<sub>10</sub> (Bit nhớ dư ra đã bị hủy bỏ).
+  * (+6)<sub>10</sub> + (-13)<sub>10</sub> = 00000110 + 11110011 = 11111001 = (-7)<sub>10</sub>.
+  * (-6)<sub>10</sub> + (-13)<sub>10</sub> = 11111010 + 11110011 = 11101101 = (-19)<sub>10</sub> (Bit nhớ dư ra đã bị hủy bỏ).
