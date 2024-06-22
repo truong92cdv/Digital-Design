@@ -46,3 +46,6 @@
   * Ex: **(10110001101011.111100000110)<sub>2</sub> = (10 110 001 101 011 . 111 100 000 110)<sub>2</sub> = (26153.7406)<sub>8</sub>**
 * Chuyển từ binary -> hexa: nhóm từng bộ 4 chữ số binary lại, rồi chuyển từng bộ số.
   * Ex: **(10110001101011.111100000110)<sub>2</sub> = (10 1100 0110 1011 . 1111 0000 0110)<sub>2</sub> = (2C6B.F26)<sub>16</sub>**
+* Chuyển từ octal hoặc hexa sang binary: làm ngược lại. Chuyển từng chữ số sang binary. Padding thêm 0 phía trước cho đủ bộ số.
+  * Ex: **(306.D)<sub>16</sub> = (0011 0000 0110 . 1101)<sub>2</sub>**
+* Hệ hexa rất hữu ích để lưu trữ, vì sự dễ dàng chuyển đổi sang binary và sự ngắn gọn trong biểu diễn số.
