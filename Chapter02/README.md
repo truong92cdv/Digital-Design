@@ -68,3 +68,11 @@ Có 6 định lý cơ bản, các định lý có thể chứng minh từ các t
   * *f1' = x'y'z' + x'yz' + x'yz + xy'z + xyz' = m<sub>0</sub> + m<sub>2</sub> + m<sub>3</sub> + m<sub>5</sub> + m<sub>6</sub>*.
   * *f1 = (f1')' = (x+y+z)(x+y'+z)(x+y'+z')(x'+y+z')(x'+y'+z) = M<sub>0</sub> * M<sub>2</sub> * M<sub>3</sub> * M<sub>5</sub> * M<sub>6</sub>*.
 
+## Sum of minterms
+* Với n biến, ta có 2<sup>n</sup> minterms. Vì mỗi minterm có thể nhận giá trị 0 hoặc 1, nên có tổng cộng 2<sup>2n</sup> hàm khác nhau.
+* Để chuyển 1 hàm về dạng **sum of minterms**, ta triển khai biểu thức thành dạng tổng của các tích. Nếu tích nào còn thiếu biến, ta sẽ AND nó với *(x + x')* trong đó x là biến còn thiếu, sẽ thu được dạng **sum of minterms**.
+* Ex: Chuyển hàm *F = A + B'C* sang dạng chính tắc **sum of minterms**:
+  * Thành phần A thiếu 2 biến B và C. Áp dụng quy tắc trên: *A = A(B+B') = AB + AB'*. Vẫn còn thiếu biến C nên ta tiếp tục *AB + AB' = AB(C+C') + AB'(C+C') = ABC + ABC' + AB'C + AB'C'*.
+  * Thành phần B'C thiếu biến A, nên *B'C = B'C(A+A') = AB'C + A'B'C*.
+  * Kết hợp lại: *F = ABC + ABC' + AB'C + AB'C' + A'B'C = m<sub>1</sub> + m<sub>4</sub> + m<sub>5</sub> + m<sub>6</sub> + m<sub>7</sub>*.
+  * Hay *F(A, B, C) = \sum(1, 4, 5, 6, 7)*.
