@@ -1,6 +1,6 @@
-# Digital Systems
+# Digital Design
 
-Digital Systems: Principles and Applications - 12th Edition - (Ronald J. Tocci, Gregory L. Moss, Neal S. Widmer)
+Digital Design: With an Introduction to the Verilog HDL, VHDL, and SystemVerilog - 6th Edition - (M. Morris Mano, Michael D. Ciletti)
 
 #### CHAPTER 01 - Introductory Concepts
 #### CHAPTER 02 - Number Systems and Codes
