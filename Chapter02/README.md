@@ -18,17 +18,17 @@
 * **Đại số Boolean** là 1 cấu trúc đại số, gồm 1 tập B cùng 2 phép toán "+" và "*" thỏa mãn các tiên đề Huntington:
   * **Tính bao đóng**: với cả phép "+" và phép "*".
   * **Luật phần tử đơn vị**:
-    (a) 0 là phần tử đơn vị của phép "+": *x + 0 = 0 + x = x*.
-    (b) 1 là phần tử đơn vị của phép "*": *x * 1 = 1 * x = x*.
+    * (a) 0 là phần tử đơn vị của phép "+": *x + 0 = 0 + x = x*.
+    * (b) 1 là phần tử đơn vị của phép "*": *x * 1 = 1 * x = x*.
   * **Luật giao hoán**:
-    (a) *x + y = y + x*.
-    (b) *x * y = y * x*.
+    * (a) *x + y = y + x*.
+    * (b) *x * y = y * x*.
   * **Luật phân phối**:
-    (a) của phép "*" đối với phép "+": *x * (y + z) = x * y + x * z*.
-    (b) của phép "+" đối với phép "*": *x + y * z = (x + y) * (x + z)*.
+    * (a) của phép "*" đối với phép "+": *x * (y + z) = x * y + x * z*.
+    * (b) của phép "+" đối với phép "*": *x + y * z = (x + y) * (x + z)*.
   * **Phép đảo**: Với mọi x thuộc B, luôn tồn tại phần bù x' thuộc B thỏa mãn:
-    (a) *x + x' = 1*
-    (b) *x * x' = 0*
+    * (a) *x + x' = 1*
+    * (b) *x * x' = 0*
   * Có ít nhất 2 phần tử riêng biệt x, y thuộc B.
 * Ở đây, ta chỉ quan tâm đến đại số Boolean 2 giá trị (tập B chỉ gồm 2 phần tử).
 
