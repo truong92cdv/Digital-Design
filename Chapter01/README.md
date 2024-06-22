@@ -55,7 +55,8 @@
 * Có 2 loại phần bù: **Bù cơ số** - **Bù r** (radix complement) và **Bù cơ số giản lược** - **Bù (r-1)** (deminished radix complement).
 * Ex: Với hệ binary: **Bù 2** và **Bù 1**. Với hệ decimal: **Bù 10** và **Bù 9**.
 ### Bù (r-1) (Deminished Radix Complement)
-* Định nghĩa: Cho 1 số N có n chữ số trong hệ cơ số r. **Bù (r-1) của N = (r<sup>n</sup> - 1) - N**.
+* Định nghĩa: Cho 1 số N có n chữ số trong hệ cơ số r.
+  * **Bù (r-1) của N = (r<sup>n</sup> - 1) - N**.
 * Với hệ decimal:
   * N = 10 nên (10<sup>n</sup> - 1) sẽ là 1 số có n chữ số 9. Ex: n = 4 => 10<sup>4</sup> = 10,000 và (10<sup>4</sup> - 1 = 9,999).
   * Như vậy, **để tìm Bù 9 của 1 số decimal, chỉ cần trừ 9 cho mỗi chữ số của nó**.
@@ -65,7 +66,8 @@
   * Vì 1-0=1 và 1-1=0. **Để tìm Bù 1 của 1 số binary, chỉ cần thay đổi mỗi chữ số 0 thành 1, 1 thành 0**.
   * Ex: Bù 1 của 1011000 = 0100111.
 ### Bù r (Radix Complement)
-* Định nghĩa: Cho 1 số N có n chữ số trong hệ cơ số r. **Bù r của N = r<sup>n</sup> - N nếu N # 0 và bằng 0 với N = 0**.
+* Định nghĩa: Cho 1 số N có n chữ số trong hệ cơ số r.
+  * **Bù r của N = r<sup>n</sup> - N nếu N # 0 và bằng 0 với N = 0**.
 * So sánh với dạng **Bù (r-1)**, ta thấy rằng **Bù r = Bù (r-1) + 1** => Muốn tìm **Bù r**, ta tìm **Bù (r-1)** rồi + thêm 1 vào kết quả.
 * Mẹo tính nhanh **Bù 10** trong hệ decimal: Tính từ phải qua, giữ nguyên các chữ số 0 liên tục. Với chữ số # 0 đầu tiên, lấy 10 trừ chữ số đó. Các chữ số còn lại bên trái, lấy 9 trừ đi chữ số đó.
   * Ex: Tìm **Bù 10** của 246700: giữ nguyên 2 chữ số 0 cuối cùng. Lấy 10 - 7 được 3. Lấy 999 - 246 được 753. Kết quả: **753300**.
