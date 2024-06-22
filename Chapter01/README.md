@@ -151,4 +151,8 @@
 ### Phép cộng trong mã BCD
 * Để thực hiện phép cộng 2 số BCD, cần chú ý rằng khi kết quả > 1001 (9<sub>10</sub>), kết quả sẽ là một chuỗi BCD vô nghĩa, ta cần + thêm 6<sub>10</sub> (0110<sub>2</sub>) vào kết quả để có được kết quả chính xác. Ex:
   * (4 + 5)<sub>10</sub> = (0100 + 0101)<sub>BCD</sub> = 1001<sub>BCD</sub> hay 9<sub>10</sub>.
-  * (4 + 8)<sub>10</sub> = (0100 + 1000)<sub>BCD</sub> = 1100. Vì 1100 > 1001 nên cần + thêm 0110 vào được 10010<sub>BCD</sub> hay 12<sub>10</sub>
+  * (4 + 8)<sub>10</sub> = (0100 + 1000)<sub>BCD</sub> = 1100. Vì 1100 > 1001 nên cần + thêm 0110 vào được 10010<sub>BCD</sub> hay 12<sub>10</sub>.
+  * (8 + 9)<sub>10</sub> = (1000 + 1001)<sub>BCD</sub> = 10001. Vì 10001 > 1001 nên cần + thêm 0110 vào được 10111<sub>BCD</sub> hay 17<sub>10</sub>.
+* Để cộng 2 số BCD có nhiều chữ số, ta cộng từng chữ số từ phải qua trái theo phương pháp trên.
+  * Ex: Tính (184 + 576) trong mã BCD:
+  * ![pic06](pic06.png)
