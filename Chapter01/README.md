@@ -23,3 +23,5 @@
 * Chuyển đổi hệ thập phân -> hệ cơ số r: Chia ra 2 phần (phần nguyên và phần sau dấu chấm).
 ### Phần nguyên
 * Chia số đó cho cơ số r, được thương và phần dư. Tiếp tục lấy thương chia cho r đến khi thương = 0. Viết các số dư theo thứ tự ngược lại.
+* Ex: Chuyển số (41)<sub>10</sub> sang hệ nhị phân:
+  ![pic01](Chapter01/pic01.png)
