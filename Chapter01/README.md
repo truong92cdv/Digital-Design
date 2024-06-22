@@ -27,4 +27,7 @@
   ![pic01](pic01.png)
 * Ex: Chuyển số 153<sub>10</sub> sang hệ octal: **(153)<sub>10</sub> = (231)<sub>8</sub>**
   ![pic02](pic02.png)
-
+### Phần thập phân
+* Lấy phần thập phân nhân với cơ số r, được phần nguyên và phần thập phân mới. Tiếp tục lấy phần thập phân mới nhân với r đến khi phần nguyên = 0. Viết các phần nguyên theo thứ tự sẽ được biểu diễn tương đương trong hệ cơ số r.
+* Ex: Chuyển số 0.6875<sub>10</sub> sang hệ nhị phân: **(0.6875)<sub>10</sub> = (0.a<sub>-1</sub>a<sub>-2</sub>a<sub>-3</sub>a<sub>4</sub>)<sub>2</sub> = (0.1011)<sub>2</sub>**
+  ![pic03](pic03.png)
