@@ -1,4 +1,5 @@
-Digital Systems and Binary Numbers
+# DIGITAL SYSTEMS AND BINARY NUMBERS
+***
 # 1.1. Hệ thống số
 * Hệ thống số làm việc với các đại lượng rời rạc.
 * Các hệ thống số thường gặp: Hệ nhị phân (Binary - 2), hệ bát phân (Octal - 8), hệ thập lục phân (Hex - 16), hệ thập phân (Decimal - 10).
@@ -75,15 +76,12 @@ Digital Systems and Binary Numbers
 * Định nghĩa: Cho 1 số N có n chữ số trong hệ cơ số r.
   * **Bù r của N = r<sup>n</sup> - N nếu N # 0 và bằng 0 với N = 0**.
 * So sánh với dạng **Bù (r-1)**, ta thấy rằng **Bù r = Bù (r-1) + 1** => Muốn tìm **Bù r**, ta tìm **Bù (r-1)** rồi + thêm 1 vào kết quả.
-  
 * Mẹo tính nhanh **Bù 10** trong hệ decimal: Tính từ phải qua, giữ nguyên các chữ số 0 liên tục. Với chữ số # 0 đầu tiên, lấy 10 trừ chữ số đó. Các chữ số còn lại bên trái, lấy 9 trừ đi chữ số đó.
   * Ex: Tìm **Bù 10** của 246700: giữ nguyên 2 chữ số 0 cuối cùng. Lấy 10 - 7 được 3. Lấy 999 - 246 được 753. Kết quả: **753300**.
-    
- * Mẹo tính nhanh **Bù 2** trong hệ binary: Tính từ phải qua, giữ nguyên các chữ số 0 liên tục và chữ số 1 đầu tiên. Các chữ số còn lại bên trái, thay 1 thành 0, thay 0 thành 1.
-   * Ex: Tìm **Bù 2** của 1101100: giữ nguyên ...100. Thay 1101... thành 0010... Kết quả: **0010100**.
-     
- * Đối với số có dấu chấm thập phân, tạm thời loại bỏ dấu chấm, tìm phần bù tương ứng rồi thêm dấu chấm vào đúng vị trí cũ.
- * Phần bù của phần bù = số ban đầu.
+* Mẹo tính nhanh **Bù 2** trong hệ binary: Tính từ phải qua, giữ nguyên các chữ số 0 liên tục và chữ số 1 đầu tiên. Các chữ số còn lại bên trái, thay 1 thành 0, thay 0 thành 1.
+  * Ex: Tìm **Bù 2** của 1101100: giữ nguyên ...100. Thay 1101... thành 0010... Kết quả: **0010100**.   
+* Đối với số có dấu chấm thập phân, tạm thời loại bỏ dấu chấm, tìm phần bù tương ứng rồi thêm dấu chấm vào đúng vị trí cũ.
+* Phần bù của phần bù = số ban đầu.
 
 ## Phép trừ với biểu diễn phần bù
 * Để trừ 2 số bằng giấy và bút, ta dùng khái niệm "mượn": khi trừ số nhỏ cho số lớn, ta mượn 1 từ hàng cao hơn.
@@ -92,20 +90,15 @@ Digital Systems and Binary Numbers
   * Lấy M + **Bù r** của N. Về mặt toán học: **M + (r<sup>n</sup> - N) = M - N + r<sup>n</sup>**.
   * Nếu M >= N. Phép cộng trên sẽ sinh ra phần dư r<sup>n</sup>. Loại bỏ phần dư này, ta được M - N.
   * Nếu M < N. Phép cộng trên sẽ không tạo ra phần dư, kết quả sẽ = r<sup>n</sup> - (N - M), chính là **Bù r** của hiệu (N - M). Để thu được kết quả cuối cùng, lấy **Bù r** của tổng trên và đặt dấu "-" phía trước kết quả.
-    
 * Ex: Tính 72532 - 3250 theo phương pháp **Bù 10**:
   * **Bù 10** của 03250 là 96750. Lấy 72532 + 96750 được tổng 169282. Hủy bỏ phần dư 10<sup>5</sup>: 169282 - 100000 được kết quả 69282.
   * Chú ý: Phép cộng cho ra kết quả có dư 1 chữ số nhớ, có thể suy ra M >= N và đáp án là một số dương.
 * Ex: Tính 3250 - 72532 theo phương pháp **Bù 10**:
   * **Bù 10** của 72532 là 27468. Lấy 03250 + 27468 được tổng 30718. Tổng này không sinh ra số nhớ, nên kết quả là 1 số âm. Để thu được kết quả, lấy **Bù 10** của tổng 30718 = 69282. Vậy kết quả cuối cùng là -69282.
-    
-* Lưu ý: Ta nhận ra kết quả là 1 số âm khi tính tổng không sinh ra số nhớ. 
-  
+  * Lưu ý: Ta nhận ra kết quả là 1 số âm khi tính tổng không sinh ra số nhớ.   
 * Ex: Tính (X - Y) với X = 1010100 và Y = 1000011 theo phương pháp **Bù 2**:
-  * **Bù 2** của Y là 0111101. Lấy X + **Bù 2** của Y ta được 10010001. Hủy bỏ đi số nhớ (chữ số 1 dư ra ở bên trái) được kết quả 0010001.
-    
-* Có thể dùng phương pháp **Bù (r-1)** để tính M - N theo cách tương tự: Lấy M + **Bù (r-1)** của N. Cộng tổng này với 1 sẽ được kết quả.
-  
+  * **Bù 2** của Y là 0111101. Lấy X + **Bù 2** của Y ta được 10010001. Hủy bỏ đi số nhớ (chữ số 1 dư ra ở bên trái) được kết quả 0010001.    
+* Có thể dùng phương pháp **Bù (r-1)** để tính M - N theo cách tương tự: Lấy M + **Bù (r-1)** của N. Cộng tổng này với 1 sẽ được kết quả. 
 * Ex: Tính (X - Y) với X = 1010100 và Y = 1000011 theo phương pháp **Bù 1**:
   * **Bù 1** của Y là 0111100. Lấy X + **Bù 1** của Y ta được 10010000. Hủy bỏ đi số nhớ và cộng thêm 1 vào được kết quả 0010001.
 * Ex: Tính (Y - X) với X = 1010100 và Y = 1000011 theo phương pháp **Bù 1**:
@@ -129,9 +122,9 @@ Digital Systems and Binary Numbers
   * Phép cộng 2 số nhị phân có dấu với số âm viết dưới dạng **Bù 2** được tính bằng cách cộng 2 số gồm cả bit dấu. Bit nhớ dư ra sẽ bị hủy bỏ.
 * Ví dụ:
   * (+6)<sub>10</sub> + (+13)<sub>10</sub> = 00000110 + 00001101 = 00010011 = (+19)<sub>10</sub>.
-  * ( -6)<sub>10</sub> + (+13)<sub>10</sub> = 11111010 + 00001101 = 00000111 = ( +7)<sub>10</sub> (Bit nhớ dư ra đã bị hủy bỏ).
+  * ( -6)<sub>10</sub> + (+13)<sub>10</sub> = 11111010 + 00001101 = 00000111 = ( +7)<sub>10</sub> (Bit nhớ dư ra bị hủy bỏ).
   * (+6)<sub>10</sub> + ( -13)<sub>10</sub> = 00000110 + 11110011 = 11111001 = ( -7)<sub>10</sub>.
-  * ( -6)<sub>10</sub> + ( -13)<sub>10</sub> = 11111010 + 11110011 = 11101101 = (-19)<sub>10</sub> (Bit nhớ dư ra đã bị hủy bỏ).
+  * ( -6)<sub>10</sub> + ( -13)<sub>10</sub> = 11111010 + 11110011 = 11101101 = (-19)<sub>10</sub> (Bit nhớ dư ra bị hủy bỏ).
 * Lưu ý: Để đảm bảo có kết quả chính xác, cần cung cấp đủ bit để tính cộng, tránh hiện tượng tràn số. Vì khi biểu diễn 1 số trong máy tính, ta thường khai báo cố định số bit tối đa để lưu trữ.
 
 ## Phép trừ
