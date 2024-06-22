@@ -76,3 +76,16 @@ Có 6 định lý cơ bản, các định lý có thể chứng minh từ các t
   * Thành phần B'C thiếu biến A, nên $B'C = B'C(A+A') = AB'C + A'B'C$.
   * Kết hợp lại: $F = ABC + ABC' + AB'C + AB'C' + A'B'C = m_1 + m_4 + m_5 + m_6 + m_7$.
   * Hay $F(A, B, C) = \sum(1, 4, 5, 6, 7)$.
+
+## Product of maxterms
+* Mỗi trong số $2^{2n}$ hàm với n biến có thể biểu diễn dưới dạng **product of maxterms**.
+* Để chuyển đổi, ta có thể dụng luật phân phối $x + yz = (x+y)(x+z)$. Thành phần nào còn thiếu biến (ví dụ thiếu biến x) thì ta OR thêm với $xx'$.
+* Ex: Chuyển hàm $F = xy + x'z$ sang dạng **product of maxterms**.
+  * $F = xy + x'z = (xy + x')(xy + z) = (x + x')(y + x')(x + z)(y + z) = (x' + y)(x + z)(y + z)$.
+  * Mỗi số hạng trên đều thiếu 1 biến. Ta tiến hành OR thêm với $xx'$ (nếu thiếu biến x):
+    * $x' + y = x' + y + zz' = (x' + y + z)(x' + y + z')$.
+    * $x + z = x + z + yy' = (x + y + z)(x + y' + z)$.
+    * $y + z = y + z + xx' = (x + y + z)(x' + y + z)$.
+  * Kết hợp các số hạng lại, thành phần nào trùng lắp thì bỏ đi vì ta có định lý $x * x = x$. Thu được:
+    * $F = (x + y + z)(x + y' + z)(x' + y + z)(x' + y + z') = M_0M_2M_4M_5$.
+    * Hay $F = \prod(0, 2, 4, 5)$.
