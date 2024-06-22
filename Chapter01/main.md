@@ -1,8 +1,8 @@
 # Digital Systems and Binary Numbers
 
 ## 1.1. Digital Systems
-Hệ thống số làm việc với các đại lượng rời rạc.<space></space>
-Các thống số thường gặp: Hệ nhị phân (Binary - 2), hệ bát phân (Octal - 8), hệ thập lục phân (Hex - 16), hệ thập phân (Decimal - 10).
+* Hệ thống số làm việc với các đại lượng rời rạc.
+* Các thống số thường gặp: Hệ nhị phân (Binary - 2), hệ bát phân (Octal - 8), hệ thập lục phân (Hex - 16), hệ thập phân (Decimal - 10).
 ## 1.2. Binary Numbers
 Hệ thống số nhị phân được sử dụng trong máy tính và mạch số bởi sự thuận tiện của nó.<space></space>
 Hệ nhị phân gồm 2 chữ số 0 (logic LOW) và 1 (logic HIGH).<space></space>
