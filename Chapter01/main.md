@@ -9,4 +9,4 @@
 * Một số được biểu diễn ở hệ cơ số (base - radix) r dưới dạng:
   **(a<sub>n</sub>a<sub>n-1</sub>a<sub>n-2</sub>...a<sub>1</sub>a<sub>0</sub>.a<sub>-1</sub>a<sub>-2</sub>...a<sub>-m</sub>)<sub>r</sub>**
 * Số trên có giá trị tương đương trong hệ thập phân là:
-  **a<sub>n</sub>.r<sup>n</sup>+a<sub>n-1</sub>.r<sup>n-1</sup>+...+a<sub>1</sub>.r+a<sub>0</sub>+a<sub>-1</sub>.r<sup>-1</sup>+a<sub>-2</sub>.r<sup>-2</sup>+a<sub>-m</sub>.r<sup>-m</sup>**
+  **a<sub>n</sub>.r<sup>n</sup> + a<sub>n-1</sub>.r<sup>n-1</sup> + ... + a<sub>1</sub>.r + a<sub>0</sub> + a<sub>-1</sub>.r<sup>-1</sup> + a<sub>-2</sub>.r<sup>-2</sup> + a<sub>-m</sub>.r<sup>-m</sup>**
