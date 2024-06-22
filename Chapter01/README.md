@@ -1,10 +1,10 @@
-# 1. Digital Systems and Binary Numbers
+1. Digital Systems and Binary Numbers
 ***
-## 1.1. Hệ thống số
+# 1.1. Hệ thống số
 * Hệ thống số làm việc với các đại lượng rời rạc.
 * Các hệ thống số thường gặp: Hệ nhị phân (Binary - 2), hệ bát phân (Octal - 8), hệ thập lục phân (Hex - 16), hệ thập phân (Decimal - 10).
 ***
-## 1.2. Hệ nhị phân
+# 1.2. Hệ nhị phân
 * Hệ thống số nhị phân được sử dụng trong máy tính và mạch số bởi sự thuận tiện của nó.
 * Hệ nhị phân gồm 2 chữ số 0 (logic LOW) và 1 (logic HIGH).
 * Một số được biểu diễn ở hệ cơ số (base - radix) r dưới dạng:
@@ -18,7 +18,7 @@
   * Hệ Hex rất thuận tiện để lưu trữ chuỗi số nhị phân. 1 chữ số hệ hex tương đương 4 chữ số hệ binary, 2 chữ số hệ hex tương đương 8 chữ số hệ binary = 1 byte.
 * 2<sup>10</sup> = 1K (kilo). 2<sup>20</sup> = 1M (mega). 2<sup>30</sup> = 1G (giga). 2<sup>40</sup> = 1T (tetra). 
 ***
-## 1.3. Chuyển đổi giữa các hệ cơ số
+# 1.3. Chuyển đổi giữa các hệ cơ số
 * Chuyển đổi hệ cơ số r sang decimal: Triển khai biểu diễn như phần 1.2 bên trên.
 * Chuyển đổi hệ decimal -> hệ cơ số r: Chia ra 2 phần (phần nguyên và phần thập phân).
   
@@ -43,7 +43,7 @@
   * **(153.513)<sub>10</sub> = (231.406517...)<sub>8</sub>**
 ***
 
-## 1.4. Hệ cơ số 8 và 16
+# 1.4. Hệ cơ số 8 và 16
 * Sự chuyển đổi giữa các hệ số binary, octal và hexa rất thường gặp.
 * 1 chữ số hệ octal = 3 chữ số hệ binary. 1 chữ số hệ hexa = 4 chữ số hệ binary.
 * Chuyển từ binary -> octal: nhóm từng bộ 3 chữ số binary lại, rồi chuyển từng bộ số.
@@ -55,7 +55,7 @@
 * Hệ hexa rất hữu ích để lưu trữ, vì sự dễ dàng chuyển đổi sang binary và sự ngắn gọn trong biểu diễn số.
 ***
 
-## 1.5. Biểu diễn phần bù của 1 số
+# 1.5. Biểu diễn phần bù của 1 số
 * Biểu diễn số dạng phần bù: hữu ích khi cần thực hiện các phép toán với số âm, hoặc phép toán trừ, giúp đơn giản hóa thiết kế mạch số cũng như tiết kiệm chi phí khi thực thi mạch số.
 * Có 2 loại phần bù: **Bù cơ số** - **Bù r** (radix complement) và **Bù cơ số giản lược** - **Bù (r-1)** (deminished radix complement).
 * Ex: Với hệ binary: **Bù 2** và **Bù 1**. Với hệ decimal: **Bù 10** và **Bù 9**.
@@ -115,7 +115,7 @@
   * **Bù 1** của X là 0101011. Lấy Y + **Bù 1** của X ta được 1101110. Tổng này không có số nhớ nên đáp án là số âm. Vậy ta lấy **Bù 1** của tổng 1101110 được 0010001. Kết quả cuối cùng là -0010001.
 ***
 
-## 1.6. Số nhị phân có dấu
+# 1.6. Số nhị phân có dấu
 * Có 3 cách biểu diễn số âm trong máy tính:
   * Phương pháp "dấu - độ lớn": Thêm 1 bit dấu phía trước số đó. Bit 0 cho số dương, Bit 1 cho số âm.
   * Phương pháp "Bù 1".
@@ -144,7 +144,7 @@
 * Nhận xét: Phép cộng và phép trừ của các số không dấu lẫn có dấu đều được thực hiện theo cùng một cách. Vì vậy, ta chỉ cần thiết kế 1 mạch số chung để xử lý cho tất cả. Người dùng sẽ giải thích kết quả phép cộng hay phép trừ theo 1 cách phù hợp tùy vào quy ước số đó là có dấu hay không dấu. Do đó, hệ thống số **Bù 2** là nền tảng cực kỳ quan trọng trong mạch số. 
 ***
 
-## 1.7. Các loại mã hóa nhị phân
+# 1.7. Các loại mã hóa nhị phân
 
 ### BCD Code (Binary-Coded Decimal Code): Số thập phân được mã hóa nhị phân
 * Hệ nhị phân rất ưu việt trong mạch số, nhưng hệ thập phân lại quen thuộc với con người hơn. Có 1 cách trung hòa 2 hệ số này, đó là mã hóa mỗi chữ số của hệ decimal thành binary.
