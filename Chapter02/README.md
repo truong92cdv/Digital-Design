@@ -75,4 +75,4 @@ Có 6 định lý cơ bản, các định lý có thể chứng minh từ các t
   * Thành phần A thiếu 2 biến B và C. Áp dụng quy tắc trên: *A = A(B+B') = AB + AB'*. Vẫn còn thiếu biến C nên ta tiếp tục *AB + AB' = AB(C+C') + AB'(C+C') = ABC + ABC' + AB'C + AB'C'*.
   * Thành phần B'C thiếu biến A, nên *B'C = B'C(A+A') = AB'C + A'B'C*.
   * Kết hợp lại: *F = ABC + ABC' + AB'C + AB'C' + A'B'C = m<sub>1</sub> + m<sub>4</sub> + m<sub>5</sub> + m<sub>6</sub> + m<sub>7</sub>*.
-  * Hay *F(A, B, C) = \sum(1, 4, 5, 6, 7)*.
+  * Hay *F(A, B, C) = $\sum(1, 4, 5, 6, 7)$*.
