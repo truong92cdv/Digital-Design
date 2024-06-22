@@ -81,7 +81,7 @@
  * Đối với số có dấu chấm thập phân, tạm thời loại bỏ dấu chấm, tìm phần bù tương ứng rồi thêm dấu chấm vào đúng vị trí cũ.
  * Phần bù của phần bù = số ban đầu.
    
-### Subtraction with Complements
+### Phép trừ với biểu diễn phần bù
 * Để trừ 2 số bằng giấy và bút, ta dùng khái niệm "mượn": khi trừ số nhỏ cho số lớn, ta mượn 1 từ hàng cao hơn.
 * Phương pháp trên không hiệu quả khi thực thi trong mạch số. Với mạch số, ta biểu diễn số dưới dạng phần bù để thực hiện phép trừ thuận tiện và đơn giản hơn.
 * Phép trừ 2 số nguyên không dấu có n chữ số M - N trong hệ cơ số r được thực hiện theo các bước sau:
