@@ -83,7 +83,7 @@
    
 ### Phép trừ với biểu diễn phần bù
 * Để trừ 2 số bằng giấy và bút, ta dùng khái niệm "mượn": khi trừ số nhỏ cho số lớn, ta mượn 1 từ hàng cao hơn.
-* Phương pháp trên không hiệu quả khi thực thi trong mạch số. Với mạch số, ta biểu diễn số dưới dạng phần bù để thực hiện phép trừ thuận tiện và đơn giản hơn.
+* Phương pháp trên không hiệu quả khi thực thi trong mạch số. Với mạch số, ta biểu diễn số âm dưới dạng phần bù để thực hiện phép trừ thuận tiện và đơn giản hơn.
 * Phép trừ 2 số nguyên không dấu có n chữ số M - N trong hệ cơ số r được thực hiện theo các bước sau:
   * Lấy M + **Bù r** của N. Về mặt toán học: **M + (r<sup>n</sup> - N) = M - N + r<sup>n</sup>**.
   * Nếu M >= N. Phép cộng trên sẽ sinh ra phần dư r<sup>n</sup>. Loại bỏ phần dư này, ta được M - N.
