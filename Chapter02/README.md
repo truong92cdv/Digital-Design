@@ -40,5 +40,21 @@
 * Với 1 định lý cho trước, ta chỉ cần thay đổi OR - AND, đổi 0 - 1 sẽ được 1 định lý đúng khác.
 
 ## Các định lý cơ bản
-* Có 6 định lý cơ bản, các định lý có thể chứng minh từ các tiên đề.
+Có 6 định lý cơ bản, các định lý có thể chứng minh từ các tiên đề.
 ![pic201](pic201.png)
+
+## Thứ tự ưu tiên phép toán
+* Thứ tự ưu tiên giảm dần: dấu ngoặc > NOT > AND > OR.
+* Ex: Rút gọn hàm *F = x'y'z + xyz + x'yz + xy'z = x'z*(y' + y) + xz*(y' + y) = x'z + xz = (x' + x)z = 1.z = z*.
+
+# 2.5. Hàm Boolean
+* 1 hàm Boolean có thể biểu diễn dưới dạng đại số hoặc dạng bảng chân trị.
+* 1 hàm Boolean có thể chuyển từ dạng đại số sang sơ đồ cổng logic. Ta nên sử dụng các định lý trong đại số Boolean để rút gọn hàm trước khi thực thi bằng cổng logic để tiết kiệm chi phí.
+
+## Phần bù của 1 hàm Boolean
+* Phần bù của hàm F là hàm F' có được bằng cách thay các giá trị 0 thành 1, 1 thành 0 trong bảng chân trị. Hoặc áp dụng định lý DeMorgan bằng cách: thay các phép toán AND thành OR và ngược lại, đồng thời lấy phần bù các toán hạng. Ex:
+  * Với *F1 = x'yz' + x'y'z* thì *F1' = (x'yz' + x'y'z)' = (x + y' + z)(x + y + z')*.
+  * Với *F2 = x(y'z' + yz)* thì *F2' = [x(y'z' + yz)]' = x' + (y'z' + yz)' = x' + (y'z')'(yz)' = x' + (y + z)(y' + z') = x' + yz' + y'z*.
+
+# 2.6. Dạng chính tắc và dạng chuẩn
+
