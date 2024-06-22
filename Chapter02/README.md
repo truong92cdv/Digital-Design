@@ -58,9 +58,9 @@ Có 6 định lý cơ bản, các định lý có thể chứng minh từ các t
 
 # 2.6. Dạng chính tắc và dạng chuẩn
 ## Minterm và Maxterm
-* Xét 2 biến x, y và phép toán AND sẽ tạo ra 4 tổ hợp phép toán: x'y', x'y, xy', xy. Mỗi biểu diễn này được gọi là 1 **minterm** (tích chuẩn).
-* Với n biến có thể hình thành 2<sup>n</sup> **minterm**, ký hiệu từ **m<sub>0</sub>** đến **m<sub>n-1</sub>**.
-* Tương tự, xét phép toán OR với n biến sẽ hình thành 2<sup>n</sup> tổ hợp phép toán, gọi là **maxterm**, ký hiệu từ **M<sub>0</sub>** đến **M<sub>n-1</sub>**.
+* Xét 2 biến x, y và phép toán AND sẽ tạo ra 4 tổ hợp phép toán: $x'y', x'y, xy', xy$. Mỗi biểu diễn này được gọi là 1 **minterm** (tích chuẩn).
+* Với n biến có thể hình thành $2^n$ **minterm**, ký hiệu từ $m_0$ đến $m_{n-1}$.
+* Tương tự, xét phép toán OR với n biến sẽ hình thành $2^n$ tổ hợp phép toán, gọi là **maxterm**, ký hiệu từ $M_0$ đến $M_{n-1}$.
 ![pic202](pic202.png)
 * 1 hàm Boolean có thể biểu diễn dưới dạng **sum of minterms** hoặc dạng **product of maxterms**, đây là dạng *chính tắc*. Ex:
 ![pic203](pic203.png)
