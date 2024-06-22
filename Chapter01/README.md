@@ -165,9 +165,40 @@
 ![pic07](pic07.png)
 * Mã **BCD** và mã **2421** là các mã có trọng số. Mỗi bit được gán 1 trọng số. Ta có thể dựa vào trọng số để tính ra chữ số thập phân tương ứng. Ex:
   * (0110)<sub>BCD</sub> = 8 x 0 + 4 x 1 + 2 x 1 + 1 x 0 = 6.
-  * (1101)<sub>2421</sub> = 2 x 1 + 4 x 1 + 2 x 0 + 1 x 1 = 7. Lưu ý là với mã **2421**, 1 chữ số thập phân sẽ có chuỗi bit **2421** tương ứng. Ví dụ (0100) và (1010) khi tính trọng số đều cho ra kết quả là 4.
+  * (1101)<sub>2421</sub> = 2 x 1 + 4 x 1 + 2 x 0 + 1 x 1 = 7. Lưu ý là với mã **2421**, 1 chữ số thập phân sẽ có 2 chuỗi bit **2421** tương ứng. Ví dụ (0100) và (1010) khi tính trọng số đều cho ra kết quả là 4.
 * Mã **2421** và mã **Excess-3** là các mã tự bù: **Bù 9** của 1 số thập phân có thể tính được bằng cách thay 1 thành 0, thay 0 thành 1. Ex:
   * (395)<sub>10</sub> = (0110 1100 1000)<sub>Excess-3</sub>. **Bù 9** của nó là (604)<sub>10</sub> = (1001 0011 0111)<sub>Excess-3</sub>.
 * Mã **Excess-3** còn có thể tính bằng cách lấy biểu diễn nhị phân + 3.
 * Mã **BCD** không tự bù.
 * Mã **8,4,-2,-1** là mã có cả trọng số dương và âm.
+
+### Mã Gray
+* Mã nhị phân có 1 nhược điểm: 2 số liền kề đôi khi có biểu diễn nhị phân khác nhau rất nhiều. Ví dụ: Từ 7 (0111) -> 8 (1000). 2 số liền kề nhưng 4 bit đều khác nhau hoàn toàn.
+* Trong một số ứng dụng, cần có 1 hệ thống số khắc phục được nhược điểm này: 2 số liền kề chỉ được khác nhau 1 bit. Mã **Gray** đáp ứng yêu cầu này.
+![pic08](pic08.png)
+
+### Mã ASCII
+* Mã ASCII (American Standard Code for Information Interchange) dùng 7 bits để mã hóa 128 ký tự (b<sub>7</sub>b<sub>6</sub>b<sub>5</sub>b<sub>4</sub>b<sub>3</sub>b<sub>2</sub>b<sub>1</sub>).
+* Gồm 94 ký tự in được (26 chữ cái in hoa, 26 chữ cái in thường, 10 chữ số, 32 ký tự đặc biệt) và 34 ký tự không in được.
+* Mã ASCII sử dụng 7 bits, nhưng máy tính thường lưu trữ thông tin theo từng byte = 8 bits. Bit thứ 8 thường được thêm vào phía trước với mục đích riêng tùy trường hợp.
+
+### Mã phát hiện lỗi
+* Để phát hiện lỗi khi truyền tin, người ta thường thêm vào bit thứ 8 phía trước mã ASCII (gọi là parity bit).
+* Có 2 loại parity bit (even parity): thêm vào 1 bit để tổng số bit 1 là 1 số chẵn, hoặc (odd parity): thêm vào 1 bit để tổng số bit 1 là 1 số lẻ.
+* Ex: Ký tự A trong mã ASCII là 1000001. Nếu dùng even parity sẽ được 0100001, nếu dùng odd parity sẽ được 11000001.
+* Even parity thường thông dụng hơn. Parity bit giúp phát hiện lỗi truyền tin. Ví dụ, khi nhận được 1 ký tự ASCII với even parity bit, ta kiểm tra nếu số bit 1 không phải là số chẵn, đã có lỗi trong quá trình truyền tin. Lưu ý là phương pháp này không phát hiện được nếu quá trình truyền tin xảy ra lỗi ở 2, 4 hoặc 6 vị trí trong chuỗi bits.
+
+# 1.8. Lưu trữ số nhị phân và thanh ghi
+* Thông tin nhị phân trong máy tính được lưu trữ trong các cấu trúc gọi là binary cell. 1 binary cell lưu trữ thông tin có 2 trạng thái, hay 1 bit dữ liệu (0 hoặc 1).
+
+## Thanh ghi
+* 1 thanh ghi là 1 nhóm các binary cells liên tục. 1 thanh ghi n cells có thể chứa thông tin n bits. Nội dung của thanh ghi phụ thuộc vào kiểu dữ liệu mà người dùng quy định.
+* Ví dụ, với 1 thanh ghi 16 bit chứa chuỗi bits: 1100001111001001.
+  * Nếu ta quy định rằng thanh ghi này lưu trữ 1 số nguyên. Nội dung thanh ghi sẽ là số 50,121 trong hệ decimal.
+  * Nếu thanh ghi này lưu trữ dữ liệu là các ký tự ASCII 8 bits (với 1 even parity bit), như vậy nội dụng thanh ghi là 2 ký tự "C" và "I".
+  * Nếu thanh ghi này lưu trữ dữ liệu là mã **Excess-3**, nó sẽ tương ứng với số thập phân 9,096. Nội dung thanh ghi này không có nghĩa trong mã **BCD** vì tổ hợp bit 1100 là vô nghĩa trong **BCD code**.
+
+## Chuyển dữ liệu thanh ghi
+* Chuỗi bits trong 1 thanh ghi có thể được chuyển sang các thanh ghi khác thông qua các mạch logic số. Thanh ghi là đơn vị lưu trữ thông tin cơ bản trong máy tính
+
+# 1.9. Logic nhị phân
