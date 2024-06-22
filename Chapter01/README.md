@@ -156,3 +156,18 @@
 * Để cộng 2 số BCD có nhiều chữ số, ta cộng từng chữ số từ phải qua trái theo phương pháp trên.
   * Ex: Tính (184 + 576) trong mã BCD:
   * ![pic06](pic06.png)
+
+### Số có dấu trong BCD
+* Để biểu diễn số có dấu trong BCD, ta dùng 1001 hay 9<sub>10</sub> đặt phía trước số để biểu diễn số âm. Thực hiện các phép toán tương tự ở trên.
+
+### Các mã thập phân khác
+* Khi biểu diễn 10 chữ số của hệ decimal bằng 4 bit, ta chỉ dùng 10 tổ hợp 4 bit để biểu diễn. Việc lựa chọn các tổ hợp khác để biểu diễn mỗi chữ số sẽ tạo ra các loại mã khác nhau. BCD chỉ là 1 trong các loại mã này, ngoài ra còn có mã "2421", "Excess-3", "8,4,-2,-1", ... Xem hình sau:
+![pic07](pic07.png)
+* Mã **BCD** và mã **2421** là các mã có trọng số. Mỗi bit được gán 1 trọng số. Ta có thể dựa vào trọng số để tính ra chữ số thập phân tương ứng. Ex:
+  * (0110)<sub>BCD</sub> = 8 x 0 + 4 x 1 + 2 x 1 + 1 x 0 = 6.
+  * (1101)<sub>2421</sub> = 2 x 1 + 4 x 1 + 2 x 0 + 1 x 1 = 7. Lưu ý là với mã **2421**, 1 chữ số thập phân sẽ có chuỗi bit **2421** tương ứng. Ví dụ (0100) và (1010) khi tính trọng số đều cho ra kết quả là 4.
+* Mã **2421** và mã **Excess-3** là các mã tự bù: **Bù 9** của 1 số thập phân có thể tính được bằng cách thay 1 thành 0, thay 0 thành 1. Ex:
+  * (395)<sub>10</sub> = (0110 1100 1000)<sub>Excess-3</sub>. **Bù 9** của nó là (604)<sub>10</sub> = (1001 0011 0111)<sub>Excess-3</sub>.
+* Mã **Excess-3** còn có thể tính bằng cách lấy biểu diễn nhị phân + 3.
+* Mã **BCD** không tự bù.
+* Mã **8,4,-2,-1** là mã có cả trọng số dương và âm.
