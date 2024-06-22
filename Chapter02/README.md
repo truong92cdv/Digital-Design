@@ -107,3 +107,42 @@ Có 6 định lý cơ bản, các định lý có thể chứng minh từ các t
 * Các hàm dạng chuẩn khi chuyển sang sơ đồ cổng logic sẽ ở dạng thực thi 2 mức.
 * Ví dụ về hàm không chuẩn: $F3 = AB + C(D + E)$. Khi thực thi mạch số này sẽ là thực thi 3 mức.
 * Hàm chuẩn được ưa thích hơn vì khi thực thi 2 mức sẽ giảm thiểu thời gian delay cổng.
+
+# 2.7. Các phép toán logic khác
+* Ta biết rằng, với n biến, sẽ có $2^{2n}$ hàm khác nhau. Với n = 2, sẽ có tổng cộng 16 hàm Boolean. AND và OR chỉ là 2 trong số 16 hàm này. Giờ ta sẽ tìm 14 hàm còn lại. Bảng chân trị cho 16 hàm này (ký hiệu $F0 -> F15$) được cho trong hình sau:
+![pic204](pic204.png)
+* 16 hàm này có thể biểu diễn bằng các hàm Boolean như trong hình sau. Mặc dù, mỗi hàm này đều có thể biểu diễn dưới dạng các phép toán AND, OR, NOT. Tuy nhiên, ta hoàn toàn có thể gán các ký hiệu khác cho các phép toán này. Nhưng trong số các phép toán mới này, chỉ có phép toán XOR là thường được dùng trong mạch số.
+![pic205](pic205.png)
+* 16 hàm này có thể chia làm 3 loại:
+  * 2 hàm sinh ra kết quả xác định 0 hoặc 1.
+  * 4 hàm với phép toán 1 toán hạng: phép bù, phép chuyển.
+  * 10 hàm với phép toán nhị phân định nghĩa nên 8 loại phép toán khác nhau: AND, OR, NAND, NOR, XOR, XNOR, phép cấm (Inhibition), phép kéo theo (Implication).
+* Trong 8 phép toán nhị phân trên, Inhibition và Implication thường được dùng bởi các nhà logic học, nhưng hiếm khi dùng trong logic máy tính.
+* Đại số Boolean sử dụng các phép toán AND, OR, NOT. Các phép toán khác có thể suy ra từ định nghĩa của các phép toán cơ bản này. Tuy nhiên, ta hoàn toàn có thể bắt đầu với định nghĩa của 1 phép toán bất kỳ, ví dụ NOR, rồi suy ra các phép toán còn lại.
+
+# 2.8. Các cổng logic số
+* Trong số 16 hàm logic trên, chỉ có 8 hàm: phép bù, phép chuyển, AND, OR, NAND, NOR, XOR, XNOR được sử dụng để xây dựng các cổng logic số.
+* Cổng NAND và cổng NOR là các cổng logic chuẩn, được sử dụng còn phổ biến hơn các cổng AND, OR. Vì cổng NAND và NOR dễ xây dựng từ các mạch transitor, và các mạch số cũng dễ thực thi với các cổng này.
+![pic206](pic206.png)
+
+## Cổng mở rộng với nhiều input
+* Ngoài cổng Inverter, cổng Buffer, 6 cổng còn lại có thể mở rộng thành dạng nhiều hơn 2 input.
+* Ví dụ về các cổng nhiều input:
+![pic207](pic207.png)
+
+## Positive Logic và Negative Logic
+* Tín hiệu nhị phân (input hoặc output) của các cổng sẽ có 2 giá trị HIGH hoặc LOW. Ta hoàn toàn có thể lựa chọn giá trị HIGH để biểu diễn logic 1 hay logic 0 tùy ý. Nếu chọn HIGH biểu diễn logic 1, ta sẽ có hệ thống *Positive logic*, nếu chọn LOW biểu diễn logic 1, ta sẽ có *Negative Logic*. Ở đây ta chỉ quan tâm đến *Positive Logic*.
+
+# 2.9. Mạch tích hợp IC
+* Các IC được phân loại theo độ phức tạp của mạch số, đo bởi số lượng cổng logic (hoặc transitor) trong mạch. IC được chia thành:
+  * SSI (Small-scale integration): < 10 cổng.
+  * MSI (Medium-scale integration): 10 - 1000 cổng. Ex: decoder, adder, multiplexer, register, counter.
+  * LSI (Large-scale integration): > 1000 cổng. Ex: processor, memory chip.
+  * VLSI (Very large-scale integration) và ULSI (Ultra large-scale integration): chứa hàng triệu cổng logic.
+
+## Các họ logic số
+* Các IC không chỉ được phân loại bởi độ phức tạp, mà còn phân loại dựa trên công nghệ chế tạo các cổng logic. Một số họ thường gặp:
+  * TTL: transitor-transitor logic.
+  * ECL: emitter-coupled logic.
+  * MOS: metal-oxide semiconductor.
+  * CMOS: complementary metal-oxide semiconductor.
