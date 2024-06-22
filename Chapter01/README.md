@@ -39,3 +39,10 @@
   * **(41.6875)<sub>10</sub> = (101001.1011)<sub>2</sub>**
   * **(153.513)<sub>10</sub> = (231.406517...)<sub>8</sub>**
 
+## 1.4. Octal and Hexadecimal Numbers
+* Sự chuyển đổi giữa các hệ số binary, octal và hexa rất thường gặp.
+* 1 chữ số hệ octal = 3 chữ số hệ binary. 1 chữ số hệ hexa = 4 chữ số hệ binary.
+* Chuyển từ binary -> octal: nhóm từng bộ 3 chữ số binary lại, rồi chuyển từng bộ số.
+  * Ex: **(10110001101011.111100000110)<sub>2</sub> = (10 110 001 101 011 . 111 100 000 110)<sub>2</sub> = (26153.7406)<sub>8</sub>**
+* Chuyển từ binary -> hexa: nhóm từng bộ 4 chữ số binary lại, rồi chuyển từng bộ số.
+  * Ex: **(10110001101011.111100000110)<sub>2</sub> = (10 1100 0110 1011 . 1111 0000 0110)<sub>2</sub> = (2C6B.F26)<sub>16</sub>**
