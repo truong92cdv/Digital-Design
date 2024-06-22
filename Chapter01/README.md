@@ -21,12 +21,14 @@
 ## 1.3. Number-Base Conversions
 * Chuyển đổi hệ cơ số khác sang hệ thập phân: Triển khai biểu diễn như phần 1.2 bên trên.
 * Chuyển đổi hệ thập phân -> hệ cơ số r: Chia ra 2 phần (phần nguyên và phần sau dấu chấm).
+  
 ### Phần nguyên
 * Chia số đó cho cơ số r, được thương và phần dư. Tiếp tục lấy thương chia cho r đến khi thương = 0. Viết các số dư theo thứ tự ngược lại.
 * Ex: Chuyển số (41)<sub>10</sub> sang hệ nhị phân: **(41)<sub>10</sub> = (101001)<sub>2</sub>**
   ![pic01](pic01.png)
 * Ex: Chuyển số (153)<sub>10</sub> sang hệ octal: **(153)<sub>10</sub> = (231)<sub>8</sub>**
   ![pic02](pic02.png)
+  
 ### Phần thập phân
 * Lấy phần thập phân nhân với cơ số r, được phần nguyên và phần thập phân mới. Tiếp tục lấy phần thập phân mới nhân với r đến khi phần thập phân mới = 0. Viết các phần nguyên theo thứ tự sẽ được biểu diễn tương đương trong hệ cơ số r.
 * Ex: Chuyển số (0.6875)<sub>10</sub> sang hệ nhị phân: **(0.6875)<sub>10</sub> = (0.a<sub>-1</sub>a<sub>-2</sub>a<sub>-3</sub>a<sub>4</sub>)<sub>2</sub> = (0.1011)<sub>2</sub>**
@@ -34,6 +36,7 @@
 * Ex: Chuyển số (0.513)<sub>10</sub> sang hệ octal: **(0.513)<sub>10</sub> = (0.406517...)<sub>8</sub>**
   ![pic04](pic04.png)
 * Lưu ý: Nếu phần thập phân mới không bao giờ = 0, ta sẽ thu được một biểu diễn tương tự số vô tỉ trong hệ decimal. Ngừng phép nhân khi đã đạt đủ độ chính xác cần thiết sau dấu chấm. 1 số hữu tỉ trong hệ decimal có thể là 1 số vô tỉ trong hệ cơ số khác và ngược lại.
+  
 ### Biểu diễn đầy đủ
 * Sau khi chuyển đổi phần nguyên và phần thập phân, ta kết hợp lại sẽ có biểu diễn đầy đủ:
   * **(41.6875)<sub>10</sub> = (101001.1011)<sub>2</sub>**
@@ -54,6 +57,7 @@
 * Biểu diễn số dạng phần bù: hữu ích khi cần thực hiện các phép toán với số âm, hoặc phép toán trừ, giúp đơn giản hóa thiết kế mạch số cũng như tiết kiệm chi phí khi thực thi mạch số.
 * Có 2 loại phần bù: **Bù cơ số** - **Bù r** (radix complement) và **Bù cơ số giản lược** - **Bù (r-1)** (deminished radix complement).
 * Ex: Với hệ binary: **Bù 2** và **Bù 1**. Với hệ decimal: **Bù 10** và **Bù 9**.
+  
 ### Bù (r-1) (Deminished Radix Complement)
 * Định nghĩa: Cho 1 số N có n chữ số trong hệ cơ số r.
   * **Bù (r-1) của N = (r<sup>n</sup> - 1) - N**.
@@ -65,6 +69,7 @@
   * N = 2 nên (2<sup>n</sup> - 1) sẽ là 1 số có n chữ số 1. Ex: n = 4 => 2<sup>4</sup> = 10000 và (2<sup>4</sup> - 1 = 1111).
   * Vì 1-0=1 và 1-1=0. **Để tìm Bù 1 của 1 số binary, chỉ cần thay đổi mỗi chữ số 0 thành 1, 1 thành 0**.
   * Ex: Bù 1 của 1011000 = 0100111.
+    
 ### Bù r (Radix Complement)
 * Định nghĩa: Cho 1 số N có n chữ số trong hệ cơ số r.
   * **Bù r của N = r<sup>n</sup> - N nếu N # 0 và bằng 0 với N = 0**.
@@ -75,3 +80,11 @@
    * Ex: Tìm **Bù 2** của 1101100: giữ nguyên ...100. Thay 1101... thành 0010... Kết quả: **0010100**.
  * Đối với số có dấu chấm thập phân, tạm thời loại bỏ dấu chấm, tìm phần bù tương ứng rồi thêm dấu chấm vào đúng vị trí cũ.
  * Phần bù của phần bù = số ban đầu.
+   
+### Subtraction with Complements
+* Để trừ 2 số bằng giấy và bút, ta dùng khái niệm "mượn": khi trừ số nhỏ cho số lớn, ta mượn 1 từ hàng cao hơn.
+* Phương pháp trên không hiệu quả khi thực thi trong mạch số. Với mạch số, ta biểu diễn số dưới dạng phần bù để thực hiện phép trừ thuận tiện và đơn giản hơn.
+* Phép trừ 2 số nguyên không dấu có n chữ số M - N trong hệ cơ số r được thực hiện theo các bước sau:
+  * Lấy M + **Bù r** của N. Về mặt toán học: **M + (r<sup>n</sup> - N) = M - N + r<sup>n</sup>**.
+  * Nếu M >= N. Phép cộng trên sẽ sinh ra phần dư r<sup>n</sup>. Loại bỏ phần dư này, ta được M - N.
+  * Nếu M < N. Phép cộng trên sẽ không tạo ra phần dư, kết quả sẽ = r<sup>n</sup> - (N - M), chính là **Bù r** của hiệu (N - M). Để thu được kết quả cuối cùng, lấy **Bù r** của tổng trên và đặt dấu "-" phía trước kết quả.
