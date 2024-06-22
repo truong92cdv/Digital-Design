@@ -112,4 +112,12 @@
 * Ex: Tính (Y - X) với X = 1010100 và Y = 1000011 theo phương pháp **Bù 1**:
   * **Bù 1** của X là 0101011. Lấy Y + **Bù 1** của X ta được 1101110. Tổng này không có số nhớ nên đáp án là số âm. Vậy ta lấy **Bù 1** của tổng 1101110 được 0010001. Kết quả cuối cùng là -0010001.
 
-## 1.6. Số nhị phân không dấu
+## 1.6. Số nhị phân có dấu
+* Có 3 cách biểu diễn số âm trong máy tính:
+  * Phương pháp "dấu - độ lớn": Thêm 1 bit dấu phía trước số. Bit 0 cho số dương, Bit 1 cho số âm.
+  * Phương pháp "Bù 1".
+  * Phương pháp "Bù 2".
+* Ex: Biểu diễn -9 trong hệ binary với 8 bits theo 3 cách. Lưu ý rằng +9 trong 3 cách đều là 00001001:
+  * Phương pháp "dấu - độ lớn": 10001001.
+  * Phương pháp "Bù 1":         11110110.
+  * Phương pháp "Bù 2":         11110111.
