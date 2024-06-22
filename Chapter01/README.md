@@ -1,4 +1,4 @@
-# Digital Systems and Binary Numbers
+# 1. Digital Systems and Binary Numbers
 
 ## 1.1. Hệ thống số
 * Hệ thống số làm việc với các đại lượng rời rạc.
