@@ -56,10 +56,12 @@
 * Ex: Với hệ binary: **Bù 2** và **Bù 1**. Với hệ decimal: **Bù 10** và **Bù 9**.
 ### Bù (r-1) (Deminished Radix Complement)
 * Định nghĩa: Cho 1 số N có n chữ số trong hệ cơ số r. **Bù (r-1) của N = (r<sup>n</sup> - 1) - N**.
-* Với hệ decimal, N = 10. (10<sup>n</sup> - 1) sẽ là 1 số có n chữ số 9. Ex: n = 4 => 10<sup>4</sup> = 10,000 và (10<sup>4</sup> - 1 = 9,999).
-* Như vậy, **để tìm Bù 9 của 1 số decimal, chỉ cần trừ 9 cho mỗi chữ số của nó**.
-* Ex: Bù 9 của 546700 = 999999 - 546700 = 453299. Bù 9 của 012398 = 999999 - 012398 = 987601.
-* Tương tự, với hệ binary, N = 2. (2<sup>n</sup> - 1) sẽ là 1 số có n chữ số 1. Ex: n = 4 => 2<sup>4</sup> = 10000 và (2<sup>4</sup> - 1 = 1111).
-* Vì 1-0=1 và 1-1=0. **Để tìm Bù 1 của 1 số binary, chỉ cần thay đổi mỗi chữ số 0 thành 1, 1 thành 0**.
-* Ex: Bù 1 của 1011000 = 0100111. Bù 1 của 0101101 = 1010010.
+* Với hệ decimal:
+  * N = 10. (10<sup>n</sup> - 1) sẽ là 1 số có n chữ số 9. Ex: n = 4 => 10<sup>4</sup> = 10,000 và (10<sup>4</sup> - 1 = 9,999).
+  * Như vậy, **để tìm Bù 9 của 1 số decimal, chỉ cần trừ 9 cho mỗi chữ số của nó**.
+  * Ex: Bù 9 của 546700 = 999999 - 546700 = 453299. Bù 9 của 012398 = 999999 - 012398 = 987601.
+* Tương tự, với hệ binary:
+  * N = 2. (2<sup>n</sup> - 1) sẽ là 1 số có n chữ số 1. Ex: n = 4 => 2<sup>4</sup> = 10000 và (2<sup>4</sup> - 1 = 1111).
+  * Vì 1-0=1 và 1-1=0. **Để tìm Bù 1 của 1 số binary, chỉ cần thay đổi mỗi chữ số 0 thành 1, 1 thành 0**.
+  * Ex: Bù 1 của 1011000 = 0100111. Bù 1 của 0101101 = 1010010.
 * 
