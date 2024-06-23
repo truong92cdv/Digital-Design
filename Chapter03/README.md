@@ -153,5 +153,5 @@
 * Ngược lại hàm NXOR là đảo của hàm XOR, dùng để kiểm tra tổng số ngõ vào có giá trị = "1" là một số chẵn.
 
 ## Parity generation và Checking
-* Parity generator: $P = x XOR y XOR z$.
+* Parity generator: $P = x \oplus y XOR z$.
 * Parity checker: $C = x XOR y XOR z XOR P$.
