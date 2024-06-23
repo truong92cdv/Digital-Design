@@ -31,8 +31,8 @@
 
 ## Prime Implicants
 * Mỗi product term là 1 implicant.
-* 1 implicant là prime implicant nếu nó là implicant lớn nhất, không thể chứa trong các implicant lớn hơn. Ex: 4 ô liền kề hình thành 1 prime implicant nếu không có implicant 8 ô nào chứa nó.
-* 1 prime implicant là essential nếu nó có chứa ít nhất 1 ô mà ô này chỉ có thể bao phủ bởi prime implicant đó. Essential prime implicant bắt buộc xuất hiện trong biểu thức cuối cùng.
+* 1 implicant là **prime implicant** nếu nó là implicant lớn nhất, không thể chứa trong các implicant lớn hơn. Ex: 4 ô liền kề hình thành 1 prime implicant nếu không có implicant 8 ô nào chứa nó.
+* 1 prime implicant là **essential** nếu nó có chứa ít nhất 1 ô mà ô này chỉ có thể bao phủ bởi prime implicant đó. Essential prime implicant bắt buộc xuất hiện trong biểu thức cuối cùng.
 * Ex: Tối giản hàm $F(A, B, C, D) = \sum(0, 2, 3, 5, 7, 8, 9, 10, 11, 13, 15)$.
 ![pic306.png](pic306.png)
 * Hình (a) vẽ 2 essential prime implicants BD và B'D'.
@@ -48,7 +48,7 @@
   * $F = BD + B'D' + B'C + AD$.
   * $F = BD + B'D' + B'C + AB'$.
 
-# 3.4. Đơn giản hóa hàm dạng Product of Sums
+# 3.4. Tối giản hàm dạng Product of Sums
 * Ta cũng có thể đơn giản hàm thành dạng **product of sums**.
 * Ex: Tối giản hàm $F(A, B, C, D) = \sum(0, 1, 2, 5, 8, 9, 10)$ theo 2 dạng **sum of products** và **product of sums**.
 ![pic307.png](pic307.png)
@@ -102,7 +102,7 @@
 * Cổng NOR có thể biểu diễn trên sơ đồ logic ở 2 dạng: dạng **OR-invert** và dạng **invert-AND**.
 ![pic315.png](pic315.png)
 * Để thực thi hàm logic 2 mức với cổng NOR, cần tối giản hàm dưới dạng *product of sums*.
-* Ex: Thực thi hàm $F1 = (A + B)(C + D)E và F2 = (AB' + A'B)(C + D')$.
+* Ex: Thực thi hàm $F1 = (A + B)(C + D)E$ và $F2 = (AB' + A'B)(C + D')$.
 ![pic316.png](pic316.png)
 
 ## Các dạng thực thi cổng logic 2 mức khác
