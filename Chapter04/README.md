@@ -1,4 +1,4 @@
-![image](https://github.com/truong92cdv/Digital-Design/assets/22215851/adcecc42-3bfe-4d1d-b788-8ae138151875)# CHAPTER 4 - COMBINATIONAL LOGIC
+# CHAPTER 4 - COMBINATIONAL LOGIC
 
 # 4.1. Introduction
 Mạch logic được chia thành 2 loại:
@@ -54,7 +54,9 @@ Sơ đồ mạch tổ hợp chỉ gồm các cổng logic, không có đường 
 ![pic409.png](pic409.png)
 * Có thể chứng minh mạch này tương đương mạch *sum of products* ở trên:
   * $S = z \oplus (x \oplus y) = z'(xy' + x'y) + z(xy' + x'y)' = z'(xy' + x'y) + z(xy + x'y') = x'y'z + x'yz' + xy'z' + xyz$.
-  * $C = z(x \oplus y) + xy = z(xy' + x'y) + xy = xy'z + x'yz + xy = xy(z + z + 1) + xy'z + x'yz = xyz + xyz + xy + xy'z + x'yz = xy + xz(y + y') + yz(x + x') = xy + xz + yz$.
+  * $C = z(x \oplus y) + xy = z(xy' + x'y) + xy = xy'z + x'yz + xy = xy(z + z + 1) + xy'z + x'yz$.
+  * $C = xyz + xyz + xy + xy'z + x'yz = xy + xz(y + y') + yz(x + x') = xy + xz + yz$.
+
 * Sơ đồ mạch Half Adder và Full Adder thực thi với các cổng NAND:
 ![pic410.png](pic410.png)
 ![pic411.png](pic411.png)
