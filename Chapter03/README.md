@@ -149,7 +149,7 @@
 
 ## Odd function
 * Hàm XOR nhiều input được dùng như 1 hàm để kiểm tra tổng số ngõ vào có giá trị = "1" là 1 số lẻ.
-* Hàm $F = a \oplus b \oplus ... \oplusR z$ sẽ = "1" nếu tổng số input = "1" là 1 số lẻ.
+* Hàm $F = a \oplus b \oplus ... \oplus z$ sẽ = "1" nếu tổng số input = "1" là 1 số lẻ.
 * Ngược lại hàm NXOR là đảo của hàm XOR, dùng để kiểm tra tổng số ngõ vào có giá trị = "1" là một số chẵn.
 
 ## Parity generation và Checking
