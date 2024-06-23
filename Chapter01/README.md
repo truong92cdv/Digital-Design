@@ -1,4 +1,4 @@
-# 1. DIGITAL SYSTEMS AND BINARY NUMBERS
+# CHAPTER 1 - DIGITAL SYSTEMS AND BINARY NUMBERS
 
 # 1.1. Hệ thống số
 * Hệ thống số làm việc với các đại lượng rời rạc.
@@ -8,6 +8,7 @@
 * Hệ thống số nhị phân được sử dụng trong máy tính và mạch số bởi sự thuận tiện của nó.
 * Hệ nhị phân gồm 2 chữ số 0 (logic LOW) và 1 (logic HIGH).
 * Một số được biểu diễn ở hệ cơ số (base - radix) r dưới dạng:
+  * $(a_na_{n-1}a_{n-2}...a_1a_0.a_{-1}a_{-2})_r$
   * **(a<sub>n</sub>a<sub>n-1</sub>a<sub>n-2</sub>...a<sub>1</sub>a<sub>0</sub>.a<sub>-1</sub>a<sub>-2</sub>...a<sub>-m</sub>)<sub>r</sub>**
 * Biểu diễn trên có giá trị tương đương trong hệ thập phân là:
   * **a<sub>n</sub>.r<sup>n</sup> + a<sub>n-1</sub>.r<sup>n-1</sup> + ... + a<sub>1</sub>.r + a<sub>0</sub> + a<sub>-1</sub>.r<sup>-1</sup> + a<sub>-2</sub>.r<sup>-2</sup> + a<sub>-m</sub>.r<sup>-m</sup>**
