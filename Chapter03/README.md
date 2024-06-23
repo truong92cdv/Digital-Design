@@ -137,21 +137,21 @@
 
 # 3.8. Hàm XOR
 * Hàm XOR có các đặc điểm sau:
-  * $x XOR 0 = x$
-  * $x XOR 1 = x'$
-  * $x XOR x = 0$
-  * $x XOR x' = 1$
-  * $x XOR y' = x' XOR y = (x XOR y)'$
-  * $x XOR y = y XOR x$
-  * $(x XOR y) xor z = x XOR (y XOR z) = x XOR y XOR z$
+  * $x \oplus 0 = x$
+  * $x \oplus 1 = x'$
+  * $x \oplus x = 0$
+  * $x \oplus x' = 1$
+  * $x \oplus y' = x' \oplus y = (x \oplus y)'$
+  * $x \oplus y = y \oplus x$
+  * $(x \oplus y) \oplus z = x \oplus (y \oplus z) = x \oplus y \oplus z$
 * Thực thi hàm XOR theo 2 dạng: dùng cổng AND, OR, NOT hoặc dùng cổng NAND.
 ![pic321.png](pic321.png)
 
 ## Odd function
 * Hàm XOR nhiều input được dùng như 1 hàm để kiểm tra tổng số ngõ vào có giá trị = "1" là 1 số lẻ.
-* Hàm $F = a XOR b XOR ... XOR z$ sẽ = "1" nếu tổng số input = "1" là 1 số lẻ.
+* Hàm $F = a \oplus b \oplus ... \oplusR z$ sẽ = "1" nếu tổng số input = "1" là 1 số lẻ.
 * Ngược lại hàm NXOR là đảo của hàm XOR, dùng để kiểm tra tổng số ngõ vào có giá trị = "1" là một số chẵn.
 
 ## Parity generation và Checking
-* Parity generator: $P = x \oplus y XOR z$.
-* Parity checker: $C = x XOR y XOR z XOR P$.
+* Parity generator: $P = x \oplus y \oplus z$.
+* Parity checker: $C = x \oplus y \oplus z \oplus P$.
