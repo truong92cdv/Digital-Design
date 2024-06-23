@@ -11,7 +11,6 @@
   * $(a_na_{n-1}a_{n-2}...a_1a_0.a_{-1}a_{-2}...a_{-m})_r$
 * Biểu diễn trên có giá trị tương đương trong hệ thập phân là:
   * $a_n.r^n + a_{n-1}.r^{n-1} + ... + a_1.r + a_0 + a_{-1}.r^{-1} + a_{-2}.r^{-2} + ... + a_{-m}.r^{-m}$
-  * **a<sub>n</sub>.r<sup>n</sup> + a<sub>n-1</sub>.r<sup>n-1</sup> + ... + a<sub>1</sub>.r + a<sub>0</sub> + a<sub>-1</sub>.r<sup>-1</sup> + a<sub>-2</sub>.r<sup>-2</sup> + a<sub>-m</sub>.r<sup>-m</sup>**
 * Hệ cơ số 8 sử dụng các chữ số từ 0 - 7 để biểu diễn số. Ex:
   * **(127.4)<sub>8</sub> = 1 x 8<sup>2</sup> + 2 x 8<sup>1</sup> + 7 x 8<sup>0</sup> + 4 x 8<sup>-1</sup> = (87.5)<sub>10</sbp>**
 * Hệ cơ số 16 sử dụng các chữ số từ 0 - F (0123456789ABCDEF) để biểu diễn số. Ex:
