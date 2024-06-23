@@ -28,7 +28,7 @@ Sơ đồ mạch tổ hợp chỉ gồm các cổng logic, không có đường 
 ## Mạch cộng, mạch trừ
 * Mạch bán cộng (Half Adder) cộng 2 bit ở ngõ vào, đầu ra là 1 bit tổng và 1 bit nhớ.
 * Mạch cộng toàn phần (Full Adder) có thêm 1 bit nhớ ở ngõ vào. Mạch cộng toàn phần có thể xây dựng từ 2 mạch bán cộng.
-* Khi kết hợp n mạch cộng toàn phần thành chuỗi ta sẽ được mạch cộng nhị phân n bit.
+* Khi kết hợp n mạch cộng toàn phần thành chuỗi ta sẽ được mạch cộng nhị phân (Binary Adder).
 * Có thể sửa đổi mạch cộng nhị phân 1 chút để có được mạch cộng-trừ nhị phân.
 
 ## Half Adder
@@ -58,6 +58,46 @@ Sơ đồ mạch tổ hợp chỉ gồm các cổng logic, không có đường 
   * $C = xyz + xyz + xy + xy'z + x'yz = xy + xz(y + y') + yz(x + x') = xy + xz + yz$.
 
 * Sơ đồ mạch Half Adder và Full Adder thực thi với các cổng NAND:
+
 ![pic410.png](pic410.png)
 ![pic411.png](pic411.png)
 
+## Binary Adder
+* Để tạo mạch Binary Adder cho 2 số n-bits, ta kết nối n mạch Full Adder, với C_out của $FA_i$ kết nối với C_in của $FA_{i-1}$.
+* C_in của $FA_1$ sẽ kết nối với giá trị "0" (hoặc dùng 1 Half Adder thay thế).
+* C_out của $FA_n$ sẽ trở thành bit nhớ, cho biết phép cộng có tràn số hay không.
+* Mạch kết nối kiểu này được gọi là mạch cộng **Ripple Carry**, vì bit nhớ chạy qua từng FA từ C_in đầu tiên đến C_out cuối cùng.
+* Ví dụ về mạch 4-bit Adder:
+![pic412.png](pic412.png)
+
+## Carry Propagation
+* Mạch cộng kiểu **Ripple Carry** bên trên có nhược điểm là bit nhớ được truyền lần lượt từ $FA_1$ đến $FA_n$ để tính ra $C_1, C_2, ..., C_n; S_0, S_1, ..., S_{n-1}$ theo thứ tự. Nên sẽ có thời gian delay tăng tỷ lệ thuận với n.
+* Để khắc phục nhược điểm này, người ta thiết kế ra mạch cộng sử dụng phương pháp **Carry Lookahead Generator** để tính ra $C_1, C_2, ..., C_n$ cùng 1 lúc. Mạch cộng này sẽ có thời gian thực thi nhanh hơn, nhưng đổi lại là sự phức tạp về phần cứng (cần nhiều cổng logic hơn).
+* Xét mạch FA sau:
+![pic413.png](pic413.png)
+* Ta định nghĩa 2 hàm trung gian (là output của HA thứ 1):
+  * $P_i = A_i \oplus B_i$.
+  * $G_i = A_iB_i$.
+* Hàm $P_i$ gọi là hàm tạo carry, hàm $G_i$ gọi là hàm truyền carry. 2 hàm này không phụ thuộc vào carry và có thể tính đồng thời cho cả n bits.
+* Output của mỗi FA có thể viết lại như sau:
+  * $S_i = P_i \oplus G_i$.
+  * $C_{i+1} = G_i + P_iC_i$.
+* Sau khi đã tính các hàm $P_i$ và $G_i$, ta có thể tính đồng thời $C_1, C_2, ..., C_n$ như sau:
+  * $C_1 = G_0 + P_0C_0$.
+  * $C_2 = G_1 + P_1C_1 = G_1 + P_1(G_0 + P_0C_0) = G_1 + P_1G_0 + P_1P_0C_0$.
+  * $C_3 = G_2 + P_2C_2 = G_2 + P_2G_1 + P_2P_1G_0 + P_2P_1_P_0C_0$.
+  * Tương tự cho $C_4, ... ,C_n$.
+* Các $C_i$ được tính đồng thời thông qua một mạch thực thi 2 mức cổng (**Carry Lookahead Generator**) như sau:
+![pic414.png](pic414.png)
+* Kết hợp lại ta có sơ đồ mạch cộng 4-bit Adder với Carry Lookahead:
+![pic415.png](pic415.png)
+
+## Binary Subtractor
+* Phép trừ A - B có thể được tính bằng cách lấy A + **Bù 1** của B + 1. **Bù 1** của B có được bằng cách thêm Inverter vào mỗi bit của B. Ngoài ra, $C_0$ phải bằng 1 thay vì 0 như trong mạch cộng.
+* Để xây dựng mạch Binary Adder-Subtractor, ta thêm vào 1 bit input điều khiển M.
+  * Khi $M = 0 => B \oplus 0 = B; C_0 = 0$. Ta có mạch Adder.
+  * Khi $M = 1 => B \oplus 1 = B'; C_0 = 1$. Lúc này ta sẽ có mạch Subtractor.
+* Ngoài ra, ta thêm 1 ngõ ra $V = C_n \oplus C_{n-1}$ để phát hiện tràn số.
+  * Nếu A và B là 2 số không dấu, bit $C_n$ sẽ là bit nhớ với phép cộng, là bit mượn với phép trừ.
+  * Nếu A và B là 2 số có dấu, bit $V$ = 1 nghĩa là có hiện tượng tràn số.
+![pic416.png](pic416.png)
