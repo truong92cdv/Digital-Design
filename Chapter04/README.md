@@ -90,7 +90,7 @@ Sơ đồ mạch tổ hợp chỉ gồm các cổng logic, không có đường 
 * Các $C_i$ được tính đồng thời thông qua một mạch thực thi 2 mức cổng (**Carry Lookahead Generator**) như sau:
 ![pic414.png](pic414.png)
 * Kết hợp lại ta có sơ đồ mạch cộng 4-bit Adder với Carry Lookahead:
-![pic415.png](pic415.png)
+![pic415.png](pic415.png) 
 
 ## Binary Subtractor
 * Phép trừ A - B có thể được tính bằng cách lấy A + **Bù 1** của B + 1. **Bù 1** của B có được bằng cách thêm Inverter vào mỗi bit của B. Ngoài ra, $C_0$ phải bằng 1 thay vì 0 như trong mạch cộng.
