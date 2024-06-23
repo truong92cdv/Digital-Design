@@ -85,7 +85,7 @@ Sơ đồ mạch tổ hợp chỉ gồm các cổng logic, không có đường 
 * Sau khi đã tính các hàm $P_i$ và $G_i$, ta có thể tính đồng thời $C_1, C_2, ..., C_n$ như sau:
   * $C_1 = G_0 + P_0C_0$.
   * $C_2 = G_1 + P_1C_1 = G_1 + P_1(G_0 + P_0C_0) = G_1 + P_1G_0 + P_1P_0C_0$.
-  * $C_3 = G_2 + P_2C_2 = G_2 + P_2G_1 + P_2P_1G_0 + P_2P_1_P_0C_0$.
+  * $C_3 = G_2 + P_2C_2 = G_2 + P_2G_1 + P_2P_1G_0 + P_2P_1P_0C_0$.
   * Tương tự cho $C_4, ... ,C_n$.
 * Các $C_i$ được tính đồng thời thông qua một mạch thực thi 2 mức cổng (**Carry Lookahead Generator**) như sau:
 ![pic414.png](pic414.png)
