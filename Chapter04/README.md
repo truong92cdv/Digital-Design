@@ -23,7 +23,7 @@ Sơ đồ mạch tổ hợp chỉ gồm các cổng logic, không có đường 
   * $w = A + BC + BD = A + B(C + D)$.
 ![pic403.png](pic403.png)
 * Mạch thực thi gồm 4 cổng AND, 4 cổng OR, 2 cổng NOT. Nếu thực thi mạch theo dạng *sum of products* ban đầu thì cần đến 6 cổng AND, 3 cổng OR, 3 cổng NOT.
-* Ta thấy không phải lúc này hàm tối giản dạng chuẩn cũng là hàm tối ưu khi thực thi mạch, vì ta có thể tận dụng các subcircuits để tiết kiệm cổng. Các công cụ tổng hợp logic mặc định sẽ tìm và tận dụng các subcircuits này.
+* Ta thấy không phải lúc nào hàm tối giản dạng chuẩn cũng là hàm tối ưu khi thực thi mạch, vì ta có thể tận dụng các subcircuits để tiết kiệm cổng. Các công cụ tổng hợp logic mặc định sẽ tìm và tận dụng các subcircuits này.
 
 ## Mạch cộng, mạch trừ
 * Mạch bán cộng (Half Adder) cộng 2 bit ở ngõ vào, đầu ra là 1 bit tổng và 1 bit nhớ.
