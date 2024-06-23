@@ -1,4 +1,4 @@
-# 2. BOOLEAN ALGEBRA AND LOGIC GATES
+# CHAPTER 02 - BOOLEAN ALGEBRA AND LOGIC GATES
 
 # 2.1. Giới thiệu
 * Chi phí để thực thi mạch số là yếu tố quan trọng.
