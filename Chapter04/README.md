@@ -109,7 +109,7 @@ Sơ đồ mạch tổ hợp chỉ gồm các cổng logic, không có đường 
 * Nhìn vào bảng, ta thấy:
   * Khi tổng nhị phân <= 1001, BCD code của tổng sẽ trùng với mã nhị phân.
   * Khi tổng nhị phân > 1001, BCD code tương ứng là không hợp lệ. Ta cần hiệu chỉnh kết quả bằng cách cộng thêm 6 (0110) vào để được BCD code đúng, đồng thời sẽ sinh ra bit nhớ C.
-  * Điều kiện cần để hiệu chỉnh: (K = 1), hoặc ($Z_8$ và $Z_4$ cùng bằng 1), hoặc (($Z_8$ và $Z_2$ cùng bằng 1).
+  * Điều kiện cần để hiệu chỉnh: (K = 1), hoặc ($Z_8$ và $Z_4$ cùng bằng 1), hoặc ($Z_8$ và $Z_2$ cùng bằng 1).
   * $C = K + Z_8Z_4 + Z_8Z_2$.
   * Khi C = 1, ta cộng 0110 vào kết quả để hiệu chỉnh.
 * Mạch cộng BCD hoàn chỉnh như sau:
