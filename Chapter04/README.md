@@ -25,7 +25,7 @@ Sơ đồ mạch tổ hợp chỉ gồm các cổng logic, không có đường 
 * Mạch thực thi gồm 4 cổng AND, 4 cổng OR, 2 cổng NOT. Nếu thực thi mạch theo dạng *sum of products* ban đầu thì cần đến 6 cổng AND, 3 cổng OR, 3 cổng NOT.
 * Ta thấy không phải lúc nào hàm tối giản dạng chuẩn cũng là hàm tối ưu khi thực thi mạch, vì ta có thể tận dụng các subcircuits để tiết kiệm cổng. Các công cụ tổng hợp logic mặc định sẽ tìm và tận dụng các subcircuits này.
 
-## Mạch cộng, mạch trừ
+# 4.5. Binary Adder - Subtractor
 * Mạch bán cộng (Half Adder) cộng 2 bit ở ngõ vào, đầu ra là 1 bit tổng và 1 bit nhớ.
 * Mạch cộng toàn phần (Full Adder) có thêm 1 bit nhớ ở ngõ vào. Mạch cộng toàn phần có thể xây dựng từ 2 mạch bán cộng.
 * Khi kết hợp n mạch cộng toàn phần thành chuỗi ta sẽ được mạch cộng nhị phân (Binary Adder).
@@ -101,3 +101,38 @@ Sơ đồ mạch tổ hợp chỉ gồm các cổng logic, không có đường 
   * Nếu A và B là 2 số không dấu, bit $C_n$ sẽ là bit nhớ với phép cộng, là bit mượn với phép trừ.
   * Nếu A và B là 2 số có dấu, bit $V$ = 1 nghĩa là có hiện tượng tràn số.
 ![pic416.png](pic416.png)
+
+# 4.6. Decimal Adder
+## BCD Adder
+* Để cộng 2 chữ số trong mã BCD, trước tiên ta tiến hành cộng chuỗi nhị phân tương ứng sẽ được chuỗi 4 bit và 1 bit nhớ K. Ta lập bảng chân trị để xem sự khác nhau của chuỗi bit nhị phân và chuỗi bit BCD code của kết quả.
+![pic417.png](pic417.png)
+* Nhìn vào bảng, ta thấy:
+  * Khi tổng nhị phân <= 1001, BCD code của tổng sẽ trùng với mã nhị phân.
+  * Khi tổng nhị phân > 1001, BCD code tương ứng là không hợp lệ. Ta cần hiệu chỉnh kết quả bằng cách cộng thêm 6 (0110) vào để được BCD code đúng, đồng thời sẽ sinh ra bit nhớ C.
+  * Điều kiện cần để hiệu chỉnh: (K = 1), hoặc ($Z_8$ và $Z_4$ cùng bằng 1), hoặc (($Z_8$ và $Z_2$ cùng bằng 1).
+  * $C = K + Z_8Z_4 + Z_8Z_2$.
+  * Khi C = 1, ta cộng 0110 vào kết quả để hiệu chỉnh.
+* Mạch cộng BCD hoàn chỉnh như sau:
+![pic418.png](pic418.png)
+
+# 4.7. Binary Multiplier
+* Xét phép nhân 1 số B gồm 4 bit ($B_3B_2B_1B_0$) với 1 số A gồm 3 bit ($A_2A_1A_0$).
+* Phép nhân được thực hiện như phép nhân thông thường: Nhân từng chữ số của A với B rồi cộng kết quả lại theo đúng cột.
+* Ta sẽ cần 12 cổng AND và 2 mạch 4-bit Adder để thực hiện phép nhân này.
+* 1 cách tổng quát, khi nhân số có K chữ số với số có J chữ số, sẽ cần K*J cổng AND và (J-1) K-bit Adders.
+![pic419.png](pic419.png)
+
+# 4.8. Magnitude Comparator
+* Ta sẽ xây dựng mạch so sánh 2 số nhị phân 4-bits.
+* Input là 2 số $A = A_3A_2A_1A_0$ và $B = B_3B_2B_1B_0$. Output là 3 bit xác định $(A = B),(A > B),(A < B)$.
+* Nếu dùng phương pháp xây dựng bảng chân trị đối với 2 số n-bits, bảng sẽ gồm $2^{2n}$ dòng, quá phức tạp kể cả với n = 4.
+* Ta sẽ dùng 1 phương pháp trực quan hơn, giống như phương pháp so sánh 2 số thông thường:
+  * $A = B$ nếu tất cả các chữ số của A và B bằng nhau. Để kiểm tra $A_i = B_i$ ta dùng hàm XNOR $x_i = A_iB_i + A'_iB'_i$. Như vậy:
+    * $(A = B) = x_3x_2x_1x_0$.
+  * Để xác định xem $A > B$ hay $A < B$ ta so sánh từng chữ số từ trái qua đến khi gặp cặp chữ số khác nhau. Như vậy:
+    * $(A > B) = A_3B'_3 + x_3A_2B'_2 + x_3x_2A_1B'_1 + x_3x_2x_1A_0B'_0$.
+    * $(A < B) = A'_3B_3 + x_3A'_2B_2 + x_3x_2A'_1B_1 + x_3x_2x_1A'_0B_0$.
+* Mạch thực thi sử dụng 4 cổng XNOR:
+![pic420.png](pic420.png)
+
+# 4.9. Decoders
