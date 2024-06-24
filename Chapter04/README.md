@@ -136,3 +136,22 @@ Sơ đồ mạch tổ hợp chỉ gồm các cổng logic, không có đường 
 ![pic420.png](media/pic420.png)
 
 # 4.9. Decoders
+* Decoder là loại mạch tổ hợp chuyển đổi thông tin nhị phân từ n tín hiệu ngõ vào sang tối đa $2^n$ tín hiệu riêng biệt ở ngõ ra.
+* Ví dụ: **3-to-8 Decoder** dùng để chuyển đổi tổ hợp 3 bit nhị phân thành 1 chữ số hệ octal. Lập bảng chân trị
+![pic421.png](media/pic421.png)
+* Dễ dàng xây dựng mạch thực thi từ bảng chân trị trên
+![pic422.png](media/pic422.png)
+* Ta có thể thêm vào 1 enable input. Lúc này mạch sẽ tương đương với 1 *demultiplexer*.
+* Ví dụ, mạch **2-to-4 Decoder with enable input** sau đây tương đương với **1-to-4 Demultiplexer** (E là *data input line*, A và B là *selection inputs*):
+![pic423.png](media/pic423.png)
+* Decoder với enable input có thể kết nối với nhau để tạo nên mạch Decoder lớn hơn. Ví dụ: 2 mạch **3-to-8 Decoder with enable input** kết nối lại tạo thành mạch **4-to-16 Decoder**:
+![pic424.png](media/pic424.png)
+
+## Thực thi mạch tổ hợp với Decoders
+* Decoder có thể được ứng dụng để thực thi mạch tổ hợp bất kỳ.
+* 1 mạch tổ hợp có n inputs và m outputs có thể được thực thi với 1 mạch **$n-to-2^n$ Decoder** kết hợp với m cổng OR.
+* Ví dụ: Xét mạch Full-Adder với 3 biến đầu vào x, y, z. Dựa vào bảng chân trị của mạch Full-Adder bên trên ta có:
+  * $S(x, y, z) = \sum(1, 2, 4, 7)$.
+  * $C(x, y, z) = \sum(3, 5, 6, 7)$.
+* Ta có thể thực thi 2 hàm này với 1 mạch **3-to-8 Decoder** và 2 cổng OR 4-input như sau:
+![pic425.png](media/pic425.png)
