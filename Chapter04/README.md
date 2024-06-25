@@ -155,3 +155,38 @@ Sơ đồ mạch tổ hợp chỉ gồm các cổng logic, không có đường 
   * $C(x, y, z) = \sum(3, 5, 6, 7)$.
 * Ta có thể thực thi 2 hàm này với 1 mạch **3-to-8 Decoder** và 2 cổng OR 4-input như sau:
 ![pic425.png](media/pic425.png)
+
+# 4.10. Encoders
+* Encoder là mạch đảo của Decoder, chuyển đổi thông tin từ $2^n$ tín hiệu ngõ vào sang n tín hiệu nhị phân ở ngõ ra.
+* Ví dụ: **8-to-3 Encoder** dùng để chuyển đổi 8 tín hiệu ngõ vào (8 chữ số hệ octal) sang tổ hợp 3 bit nhị phân. Lập bảng chân trị
+![pic426.png](media/pic426.png)
+* Từ bảng chân trị thu được các hàm output:
+  * $z = D_1 + D_3 + D_5 + D_7$.
+  * $y = D_2 + D_3 + D_6 + D_7$.
+  * $x = D_4 + D_5 + D_6 + D_7$.
+
+## Priority Encoder
+* Encoder bên trên có giới hạn là chỉ 1 tín hiệu ngõ vào được phép kích hoạt vào 1 thời điểm. Nếu có nhiều input line cùng active, kết quả sinh ra sẽ không chính xác. Để giải quyết vấn đề này, ta thêm vào cơ chế Input Priority: input đứng trước có độ ưu tiên cao hơn.
+* Ví dụ: Nếu $D_3$ và $D_6$ cùng = 1 thì output = 110 vì $D_6$ có độ ưu tiên cao hơn.
+* 1 nhược điểm của Encoder trên nữa là khi tất cả input = 0 thì ouput = 000, nhưng output này lại trùng với tổ hợp input khi $D_0$ = 0. Để giải quyết vấn đề này, ta thêm 1 output để check xem có ít nhất 1 input = 1 hay không.
+* Lập bảng chân trị cho **4-to-2 Encoder** với cơ chế *input priority* và *valid output*
+![pic427.png](media/pic427.png)
+* Lập bảng K-map
+![pic428.png](media/pic428.png)
+* Từ bảng K-map thu được hàm output:
+  * $x = D_2 + D_3$.
+  * $y = D_3 + D_1D'_2$.
+  * $V = D_0 + D_1 + D_2 + D_3$.
+![pic429.png](media/pic429.png)
+
+# 4.11. Multiplexers
+* Multiplexer (mạch ghép kênh) là mạch tổ hợp cho phép chọn 1 trong nhiều ngõ vào song song để đưa tới 1 ngõ ra. Việc lựa chọn ngõ vào nào đưa qua ngõ ra do các ngõ chọn (selection lines) quyết định.
+* Thường thì có $2^n$ input lines và n selection lines.
+* Xét mạch **2-to-1 Multiplexer** có 2 input lines $I_0$ và $I_1$, 1 selection line S và 1 output line Y. Khi $S = 0$ thì $Y = I_0$, khi $S = 1$ thì $Y = I_1$. Mạch thực thi như sau:
+![pic430.png](media/pic430.png)
+* Ví dụ khác về **4-to-2 Multiplexer**. *Multiplexer* còn gọi là *Data selector*.
+![pic431.png](media/pic431.png)
+* Các mạch *Multiplexer* có thể được ghép lại với bộ selection inputs chung để tạo ra mạch chọn nhiều bit. Sợ đồ bên dưới gồm 4 multiplexer 2-to-1 ghép lại. Slection input S sẽ chọn tổ hợp bit của A hoặc để truyền qua ngõ ra Y. Ngoài ra còn có 1 enable input E để kích hoạt hay bất hoạt hoạt động của mạch.
+  * Khi E = 1, mạch bị bất hoạt.
+  * Khi E = 0, mạch được kích hoạt. Nếu S = 0, Y = A. Nếu S = 1, Y = B.
+![pic432.png](media/pic432.png)
